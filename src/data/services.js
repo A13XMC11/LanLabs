@@ -1,0 +1,81 @@
+// src/data/services.js
+export const services = [
+  {
+    id: 1,
+    title: 'Bot de WhatsApp con IA',
+    description: 'Un asistente inteligente que atiende a tus clientes 24/7, califica prospectos, responde preguntas y agenda citas — todo desde WhatsApp.',
+    category: 'IA',
+    flagship: true,
+    features: [
+      'Respuestas automáticas con contexto de tu negocio',
+      'Calificación de clientes y captura de datos',
+      'Integración con agenda o CRM',
+    ],
+    ctaMessage: 'Hola LanLabs 👋 Me interesa el Bot de WhatsApp con IA para mi negocio.',
+  },
+  {
+    id: 2,
+    title: 'Automatización con IA',
+    description: 'Flujos que conectan tus herramientas, procesan datos y actúan solos. Desde correos automáticos hasta reportes generados por IA.',
+    category: 'IA',
+    flagship: false,
+    features: [
+      'Workflows con n8n + modelos de lenguaje',
+      'Clasificación y resumen automático de información',
+      'Alertas y notificaciones inteligentes',
+    ],
+    ctaMessage: 'Hola LanLabs 👋 Quiero automatizar procesos en mi negocio con IA.',
+  },
+  {
+    id: 3,
+    title: 'Asistentes IA Personalizados',
+    description: 'Chatbots entrenados con el conocimiento de tu empresa: responden como tú, conocen tus productos y siempre están disponibles.',
+    category: 'IA',
+    flagship: false,
+    features: [
+      'Entrenado con tu documentación y FAQs',
+      'Personalidad y tono adaptados a tu marca',
+      'Desplegable en web, WhatsApp o Telegram',
+    ],
+    ctaMessage: 'Hola LanLabs 👋 Me interesa un asistente IA personalizado para mi negocio.',
+  },
+  {
+    id: 4,
+    title: 'Desarrollo Web',
+    description: 'Sitios rápidos, modernos y enfocados en conversión. Landing pages, sitios corporativos y páginas dinámicas con React y Tailwind.',
+    category: 'Web',
+    flagship: false,
+    features: [
+      'Landing pages de alto impacto',
+      'Sitios con filtros, dashboards y datos en tiempo real',
+      'SEO técnico y rendimiento optimizado',
+    ],
+    ctaMessage: 'Hola LanLabs 👋 Necesito una página web para mi negocio.',
+  },
+  {
+    id: 5,
+    title: 'Integraciones',
+    description: 'Conectamos tu sitio o bot con las herramientas que ya usas: Supabase, APIs externas, VPS, bases de datos y más.',
+    category: 'Integraciones',
+    flagship: false,
+    features: [
+      'Supabase como backend y autenticación',
+      'Conexión con APIs de terceros',
+      'Despliegue en VPS propio o Vercel',
+    ],
+    ctaMessage: 'Hola LanLabs 👋 Necesito integrar herramientas en mi proyecto.',
+  },
+  {
+    id: 6,
+    title: 'Automatizaciones con n8n',
+    description: 'Flujos que conectan tus apps, envían reportes y hacen el trabajo repetitivo por ti. Sin código innecesario.',
+    category: 'Automatización',
+    flagship: false,
+    features: [
+      'Reportes automáticos por correo o WhatsApp',
+      'Sincronización entre apps (CRM, hojas de cálculo, etc.)',
+      'Monitoreo y alertas automáticas',
+    ],
+    ctaMessage: 'Hola LanLabs 👋 Me interesan las automatizaciones con n8n.',
+  },
+];
