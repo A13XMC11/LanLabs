@@ -37,7 +37,7 @@ export default function Footer() {
           <h4 className="font-semibold mb-3">Redes</h4>
           <ul className="space-y-1 text-slate-500 dark:text-slate-400">
             <li><a href="https://instagram.com/s2.h0_?igsh=MW42NDd1NzJ2a3FpZA%3D%3D&utm_source=qr" target="_blank" rel="noreferrer">Instagram</a></li>
-            <li><a href="https://wa.me/593996979291" target="_blank" rel="noreferrer">WhatsApp</a></li>
+            <li><a href="https://wa.me/593992672980" target="_blank" rel="noreferrer">WhatsApp</a></li>
             <li><a href="https://t.me/alexander_mc11" target="_blank" rel="noreferrer">Telegram</a></li>
           </ul>
         </div>

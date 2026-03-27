@@ -124,10 +124,10 @@ export default function Header({ theme }) {
         <div className="flex items-center gap-2">
           {/* Botón rápido de WhatsApp en el header (texto simple) */}
           <a
-            href="https://wa.me/593996979291?text=Hola%20LanLabs%20👋%20me%20gustaría%20conversar%20sobre%20un%20proyecto"
+            href="https://wa.me/593992672980?text=Hola%20LanLabs%20👋%20me%20gustaría%20conversar%20sobre%20un%20proyecto"
             target="_blank"
             rel="noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium bg-lan-primary text-slate-50 hover:bg-lan-secondary shadow-soft-lg"
+            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium bg-green-500 text-slate-50 hover:bg-green-600 shadow-soft-lg"
           >
             <FaWhatsapp className="h-5 w-5" />
             Conversemos por WhatsApp

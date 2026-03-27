@@ -55,7 +55,7 @@ export default function ContactFloat() {
         <button
           type="button"
           onClick={() => setOpen((prev) => !prev)}
-          className="rounded-full bg-lan-primary text-slate-50 shadow-soft-lg p-3 flex items-center justify-center hover:bg-lan-secondary transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lan-accent"
+          className="rounded-full bg-green-500 text-slate-50 shadow-soft-lg p-3 flex items-center justify-center hover:bg-green-600 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lan-accent"
         >
           {open ? '×' : '✉️'}
         </button>
