@@ -1,0 +1,397 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "LanLabs" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "LanLabs" [ref=e8]
+      - navigation [ref=e9]:
+        - link "Inicio" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "Sobre Nosotros" [ref=e11] [cursor=pointer]:
+          - /url: /sobre
+        - link "Servicios" [ref=e12] [cursor=pointer]:
+          - /url: /servicios
+        - link "Portafolio" [ref=e13] [cursor=pointer]:
+          - /url: /portafolio
+        - link "Planes Web" [ref=e14] [cursor=pointer]:
+          - /url: /planes
+        - link "Contacto" [ref=e15] [cursor=pointer]:
+          - /url: /contacto
+      - link "Conversemos por WhatsApp" [ref=e17] [cursor=pointer]:
+        - /url: https://wa.me/593992672980?text=Hola%20LanLabs%20👋%20me%20gustaría%20conversar%20sobre%20un%20proyecto
+        - img [ref=e18]
+        - text: Conversemos por WhatsApp
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - generic [ref=e23]: Web · SEO · Ecommerce · 3D
+      - heading "Planes de desarrollo web hechos para crecer" [level=1] [ref=e24]
+      - paragraph [ref=e25]: Desde una presencia digital esencial hasta experiencias 3D de alto impacto. Elige el plan que encaja con tu etapa y escala cuando estés listo.
+      - generic [ref=e26]:
+        - link "Asesoría gratuita por WhatsApp" [ref=e27] [cursor=pointer]:
+          - /url: https://wa.me/593992672980?text=Hola%20LanLabs%20%F0%9F%91%8B%20Quisiera%20saber%20qu%C3%A9%20plan%20de%20desarrollo%20web%20se%20adapta%20mejor%20a%20mi%20negocio.
+          - img [ref=e28]
+          - text: Asesoría gratuita por WhatsApp
+        - link "Ver planes →" [ref=e30] [cursor=pointer]:
+          - /url: "#planes"
+      - paragraph [ref=e31]: ✓ Sin contrato largo✓ Precios transparentes✓ Resultados reales
+    - generic [ref=e32]:
+      - heading "Elige tu plan" [level=2] [ref=e33]
+      - generic [ref=e34]:
+        - article [ref=e35]:
+          - generic [ref=e36]:
+            - heading "Plan Básico" [level=3] [ref=e37]
+            - paragraph [ref=e38]: $350 – $500
+            - paragraph [ref=e39]: Ideal para emprendedores que necesitan presencia digital rápida y profesional.
+          - list [ref=e40]:
+            - listitem [ref=e41]:
+              - img [ref=e42]
+              - generic [ref=e44]: 3 a 5 páginas personalizadas
+            - listitem [ref=e45]:
+              - img [ref=e46]
+              - generic [ref=e48]: SEO básico (meta tags, velocidad)
+            - listitem [ref=e49]:
+              - img [ref=e50]
+              - generic [ref=e52]: Formulario de contacto
+            - listitem [ref=e53]:
+              - img [ref=e54]
+              - generic [ref=e56]: Diseño responsive (mobile + desktop)
+            - listitem [ref=e57]:
+              - img [ref=e58]
+              - generic [ref=e60]: Dominio y hosting orientado
+          - link "Solicitar este plan →" [ref=e61] [cursor=pointer]:
+            - /url: https://wa.me/593992672980?text=Hola%20LanLabs%20%F0%9F%91%8B%20Me%20interesa%20el%20Plan%20B%C3%A1sico%20de%20desarrollo%20web%20(%24350%E2%80%93500).
+        - article [ref=e62]:
+          - generic [ref=e63]: ⭐ Más popular
+          - generic [ref=e64]:
+            - heading "Plan Profesional" [level=3] [ref=e65]
+            - paragraph [ref=e66]: $800 – $1,200
+            - paragraph [ref=e67]: Para negocios que quieren crecer con contenido, posicionamiento y gestión propia.
+          - list [ref=e68]:
+            - listitem [ref=e69]:
+              - img [ref=e70]
+              - generic [ref=e72]: Hasta 15 páginas + blog
+            - listitem [ref=e73]:
+              - img [ref=e74]
+              - generic [ref=e76]: CMS para gestionar contenido
+            - listitem [ref=e77]:
+              - img [ref=e78]
+              - generic [ref=e80]: SEO avanzado + sitemap automático
+            - listitem [ref=e81]:
+              - img [ref=e82]
+              - generic [ref=e84]: Formularios dinámicos
+            - listitem [ref=e85]:
+              - img [ref=e86]
+              - generic [ref=e88]: Integración redes sociales
+            - listitem [ref=e89]:
+              - img [ref=e90]
+              - generic [ref=e92]: Analíticas básicas (GA4)
+          - link "Solicitar este plan →" [ref=e93] [cursor=pointer]:
+            - /url: https://wa.me/593992672980?text=Hola%20LanLabs%20%F0%9F%91%8B%20Me%20interesa%20el%20Plan%20Profesional%20de%20desarrollo%20web%20(%24800%E2%80%931%2C200).
+        - article [ref=e94]:
+          - generic [ref=e95]:
+            - heading "Plan Avanzado" [level=3] [ref=e96]
+            - paragraph [ref=e97]: $1,800 – $3,000
+            - paragraph [ref=e98]: Solución completa con ecommerce, pagos en línea e integraciones de negocio.
+          - list [ref=e99]:
+            - listitem [ref=e100]:
+              - img [ref=e101]
+              - generic [ref=e103]: Tienda online (ecommerce)
+            - listitem [ref=e104]:
+              - img [ref=e105]
+              - generic [ref=e107]: Pasarela de pagos integrada
+            - listitem [ref=e108]:
+              - img [ref=e109]
+              - generic [ref=e111]: Integración CRM o automatización
+            - listitem [ref=e112]:
+              - img [ref=e113]
+              - generic [ref=e115]: Dashboard de pedidos/clientes
+            - listitem [ref=e116]:
+              - img [ref=e117]
+              - generic [ref=e119]: SEO técnico completo
+            - listitem [ref=e120]:
+              - img [ref=e121]
+              - generic [ref=e123]: Soporte 30 días post-lanzamiento
+          - link "Solicitar este plan →" [ref=e124] [cursor=pointer]:
+            - /url: https://wa.me/593992672980?text=Hola%20LanLabs%20%F0%9F%91%8B%20Me%20interesa%20el%20Plan%20Avanzado%20de%20desarrollo%20web%20(%241%2C800%E2%80%933%2C000).
+        - article [ref=e125]:
+          - generic [ref=e126]: Nuevo
+          - generic [ref=e127]:
+            - heading "Plan Premium 3D" [level=3] [ref=e128]
+            - paragraph [ref=e129]: $3,500 – $6,000+
+            - paragraph [ref=e130]: Experiencias web de alto impacto con WebGL, animaciones avanzadas y soporte prioritario.
+          - list [ref=e131]:
+            - listitem [ref=e132]:
+              - img [ref=e133]
+              - generic [ref=e135]: Escenas 3D con WebGL / Three.js
+            - listitem [ref=e136]:
+              - img [ref=e137]
+              - generic [ref=e139]: Animaciones avanzadas (GSAP)
+            - listitem [ref=e140]:
+              - img [ref=e141]
+              - generic [ref=e143]: Todo lo del Plan Avanzado
+            - listitem [ref=e144]:
+              - img [ref=e145]
+              - generic [ref=e147]: Soporte prioritario (SLA)
+            - listitem [ref=e148]:
+              - img [ref=e149]
+              - generic [ref=e151]: Capacitación y documentación
+            - listitem [ref=e152]:
+              - img [ref=e153]
+              - generic [ref=e155]: Optimización de rendimiento 3D
+          - link "Solicitar este plan →" [ref=e156] [cursor=pointer]:
+            - /url: https://wa.me/593992672980?text=Hola%20LanLabs%20%F0%9F%91%8B%20Me%20interesa%20el%20Plan%20Premium%203D%20(%243%2C500%2B).
+    - generic [ref=e157]:
+      - heading "Comparativa de características" [level=2] [ref=e158]
+      - table [ref=e160]:
+        - rowgroup [ref=e161]:
+          - row "Característica Plan Básico Plan Profesional Plan Avanzado Plan Premium 3D" [ref=e162]:
+            - columnheader "Característica" [ref=e163]
+            - columnheader "Plan Básico" [ref=e164]
+            - columnheader "Plan Profesional" [ref=e165]
+            - columnheader "Plan Avanzado" [ref=e166]
+            - columnheader "Plan Premium 3D" [ref=e167]
+        - rowgroup [ref=e168]:
+          - row "Número de páginas 3 – 5 Hasta 15 Sin límite Sin límite" [ref=e169]:
+            - cell "Número de páginas" [ref=e170]
+            - cell "3 – 5" [ref=e171]:
+              - generic [ref=e172]: 3 – 5
+            - cell "Hasta 15" [ref=e173]:
+              - generic [ref=e174]: Hasta 15
+            - cell "Sin límite" [ref=e175]:
+              - generic [ref=e176]: Sin límite
+            - cell "Sin límite" [ref=e177]:
+              - generic [ref=e178]: Sin límite
+          - row "SEO Básico Avanzado Técnico completo Técnico completo" [ref=e179]:
+            - cell "SEO" [ref=e180]
+            - cell "Básico" [ref=e181]:
+              - generic [ref=e182]: Básico
+            - cell "Avanzado" [ref=e183]:
+              - generic [ref=e184]: Avanzado
+            - cell "Técnico completo" [ref=e185]:
+              - generic [ref=e186]: Técnico completo
+            - cell "Técnico completo" [ref=e187]:
+              - generic [ref=e188]: Técnico completo
+          - row "Formulario de contacto Incluido Incluido Incluido Incluido" [ref=e189]:
+            - cell "Formulario de contacto" [ref=e190]
+            - cell "Incluido" [ref=e191]:
+              - img "Incluido" [ref=e192]
+            - cell "Incluido" [ref=e194]:
+              - img "Incluido" [ref=e195]
+            - cell "Incluido" [ref=e197]:
+              - img "Incluido" [ref=e198]
+            - cell "Incluido" [ref=e200]:
+              - img "Incluido" [ref=e201]
+          - row "Blog / CMS No incluido Incluido Incluido Incluido" [ref=e203]:
+            - cell "Blog / CMS" [ref=e204]
+            - cell "No incluido" [ref=e205]:
+              - img "No incluido" [ref=e206]
+            - cell "Incluido" [ref=e208]:
+              - img "Incluido" [ref=e209]
+            - cell "Incluido" [ref=e211]:
+              - img "Incluido" [ref=e212]
+            - cell "Incluido" [ref=e214]:
+              - img "Incluido" [ref=e215]
+          - row "Ecommerce No incluido No incluido Incluido Incluido" [ref=e217]:
+            - cell "Ecommerce" [ref=e218]
+            - cell "No incluido" [ref=e219]:
+              - img "No incluido" [ref=e220]
+            - cell "No incluido" [ref=e222]:
+              - img "No incluido" [ref=e223]
+            - cell "Incluido" [ref=e225]:
+              - img "Incluido" [ref=e226]
+            - cell "Incluido" [ref=e228]:
+              - img "Incluido" [ref=e229]
+          - row "Pasarela de pagos No incluido No incluido Incluido Incluido" [ref=e231]:
+            - cell "Pasarela de pagos" [ref=e232]
+            - cell "No incluido" [ref=e233]:
+              - img "No incluido" [ref=e234]
+            - cell "No incluido" [ref=e236]:
+              - img "No incluido" [ref=e237]
+            - cell "Incluido" [ref=e239]:
+              - img "Incluido" [ref=e240]
+            - cell "Incluido" [ref=e242]:
+              - img "Incluido" [ref=e243]
+          - row "Integración CRM / APIs No incluido No incluido Incluido Incluido" [ref=e245]:
+            - cell "Integración CRM / APIs" [ref=e246]
+            - cell "No incluido" [ref=e247]:
+              - img "No incluido" [ref=e248]
+            - cell "No incluido" [ref=e250]:
+              - img "No incluido" [ref=e251]
+            - cell "Incluido" [ref=e253]:
+              - img "Incluido" [ref=e254]
+            - cell "Incluido" [ref=e256]:
+              - img "Incluido" [ref=e257]
+          - row "Animaciones 3D (WebGL) No incluido No incluido No incluido Incluido" [ref=e259]:
+            - cell "Animaciones 3D (WebGL)" [ref=e260]
+            - cell "No incluido" [ref=e261]:
+              - img "No incluido" [ref=e262]
+            - cell "No incluido" [ref=e264]:
+              - img "No incluido" [ref=e265]
+            - cell "No incluido" [ref=e267]:
+              - img "No incluido" [ref=e268]
+            - cell "Incluido" [ref=e270]:
+              - img "Incluido" [ref=e271]
+          - row "Soporte prioritario No incluido No incluido 30 días SLA incluido" [ref=e273]:
+            - cell "Soporte prioritario" [ref=e274]
+            - cell "No incluido" [ref=e275]:
+              - img "No incluido" [ref=e276]
+            - cell "No incluido" [ref=e278]:
+              - img "No incluido" [ref=e279]
+            - cell "30 días" [ref=e281]:
+              - generic [ref=e282]: 30 días
+            - cell "SLA incluido" [ref=e283]:
+              - generic [ref=e284]: SLA incluido
+          - row "Capacitación No incluido No incluido No incluido Incluido" [ref=e285]:
+            - cell "Capacitación" [ref=e286]
+            - cell "No incluido" [ref=e287]:
+              - img "No incluido" [ref=e288]
+            - cell "No incluido" [ref=e290]:
+              - img "No incluido" [ref=e291]
+            - cell "No incluido" [ref=e293]:
+              - img "No incluido" [ref=e294]
+            - cell "Incluido" [ref=e296]:
+              - img "Incluido" [ref=e297]
+          - row "Inversión $350 – $500 $800 – $1,200 $1,800 – $3,000 $3,500 – $6,000+" [ref=e299]:
+            - cell "Inversión" [ref=e300]
+            - cell "$350 – $500" [ref=e301]
+            - cell "$800 – $1,200" [ref=e302]
+            - cell "$1,800 – $3,000" [ref=e303]
+            - cell "$3,500 – $6,000+" [ref=e304]
+      - paragraph [ref=e305]: "* Los precios son referenciales en USD. El costo final depende del alcance específico de tu proyecto."
+    - generic [ref=e306]:
+      - generic [ref=e307]:
+        - generic [ref=e308]: Por qué LanLabs
+        - heading "Lo que nos diferencia" [level=2] [ref=e309]
+        - paragraph [ref=e310]: No solo entregamos código. Entregamos sistemas que trabajan para tu negocio.
+      - generic [ref=e311]:
+        - generic [ref=e312]:
+          - img [ref=e314]
+          - heading "SEO integrado desde el día 1" [level=3] [ref=e317]
+          - paragraph [ref=e318]: Cada plan incluye optimización para buscadores. No es un extra, es parte del proceso.
+        - generic [ref=e319]:
+          - img [ref=e321]
+          - heading "Escalabilidad entre planes" [level=3] [ref=e324]
+          - paragraph [ref=e325]: Empiezas en Básico y migras a Profesional sin rehacer todo. Arquitectura pensada para crecer.
+        - generic [ref=e326]:
+          - img [ref=e328]
+          - heading "Experiencias 3D accesibles" [level=3] [ref=e331]
+          - paragraph [ref=e332]: Con el Plan Premium llevas tu marca a un nivel visual que muy pocos ofrecen en la región.
+        - generic [ref=e333]:
+          - img [ref=e335]
+          - heading "Soporte personalizado" [level=3] [ref=e338]
+          - paragraph [ref=e339]: Hablas directo con el equipo. Sin tickets anónimos, sin esperas de días para una respuesta.
+        - generic [ref=e340]:
+          - img [ref=e342]
+          - heading "Documentación y capacitación" [level=3] [ref=e345]
+          - paragraph [ref=e346]: Entregamos manuales y sesiones de onboarding para que puedas gestionar tu sitio tú mismo.
+        - generic [ref=e347]:
+          - img [ref=e349]
+          - heading "Precios transparentes" [level=3] [ref=e352]
+          - paragraph [ref=e353]: Sin sorpresas al final. El alcance se define por escrito antes de empezar cualquier trabajo.
+    - generic [ref=e354]:
+      - heading "Modelo de ingresos" [level=2] [ref=e355]
+      - generic [ref=e356]:
+        - generic [ref=e357]:
+          - heading "Flujos primarios" [level=3] [ref=e358]
+          - list [ref=e359]:
+            - listitem [ref=e360]:
+              - img [ref=e361]
+              - text: Pago por proyecto (one-shot) — planes Básico y Profesional
+            - listitem [ref=e363]:
+              - img [ref=e364]
+              - text: Retainer mensual de mantenimiento y actualizaciones
+            - listitem [ref=e366]:
+              - img [ref=e367]
+              - text: Paquetes de automatización IA complementarios
+            - listitem [ref=e369]:
+              - img [ref=e370]
+              - text: Soporte prioritario por suscripción (Plan Premium)
+            - listitem [ref=e372]:
+              - img [ref=e373]
+              - text: "Add-ons: integraciones, bots de WhatsApp, analytics avanzado"
+        - generic [ref=e375]:
+          - paragraph [ref=e376]: Proyección anual
+          - generic [ref=e377]:
+            - generic [ref=e378]:
+              - generic [ref=e379]: 4 proyectos Básico
+              - generic [ref=e380]: $1,600 – $2,000
+            - generic [ref=e381]:
+              - generic [ref=e382]: 3 proyectos Profesional
+              - generic [ref=e383]: $2,400 – $3,600
+            - generic [ref=e384]:
+              - generic [ref=e385]: 2 proyectos Avanzado
+              - generic [ref=e386]: $3,600 – $6,000
+            - generic [ref=e387]:
+              - generic [ref=e388]: 1 proyecto Premium 3D
+              - generic [ref=e389]: $3,500 – $6,000
+            - generic [ref=e390]:
+              - generic [ref=e391]: Total estimado
+              - generic [ref=e392]: $11,100 – $17,600 / año
+    - generic [ref=e393]:
+      - heading "¿Cómo empezamos?" [level=2] [ref=e394]
+      - generic [ref=e395]:
+        - generic [ref=e396]:
+          - text: "01"
+          - heading "Cuéntanos tu proyecto" [level=3] [ref=e397]
+          - paragraph [ref=e398]: Escríbenos por WhatsApp o llena el formulario de contacto.
+        - generic [ref=e399]:
+          - text: "02"
+          - heading "Reunión de descubrimiento" [level=3] [ref=e400]
+          - paragraph [ref=e401]: Hablamos de tu negocio, objetivos y plan ideal sin compromiso.
+        - generic [ref=e402]:
+          - text: "03"
+          - heading "Propuesta clara" [level=3] [ref=e403]
+          - paragraph [ref=e404]: Recibes alcance, precios y tiempos por escrito antes de empezar.
+        - generic [ref=e405]:
+          - text: "04"
+          - heading "Lanzamos juntos" [level=3] [ref=e406]
+          - paragraph [ref=e407]: Desarrollamos, revisamos contigo y publicamos tu sitio.
+      - generic [ref=e408]:
+        - generic [ref=e409]:
+          - heading "¿Tienes dudas sobre qué plan elegir?" [level=3] [ref=e410]
+          - paragraph [ref=e411]: Te ayudamos a elegir sin presión. Una conversación de 15 minutos es suficiente para saber qué opción encaja con tu negocio y presupuesto.
+        - link "Hablar con LanLabs" [ref=e412] [cursor=pointer]:
+          - /url: https://wa.me/593992672980?text=Hola%20LanLabs%20%F0%9F%91%8B%20Tengo%20dudas%20sobre%20qu%C3%A9%20plan%20de%20desarrollo%20web%20elegir%20para%20mi%20negocio.
+          - img [ref=e413]
+          - text: Hablar con LanLabs
+  - contentinfo [ref=e415]:
+    - generic [ref=e416]:
+      - generic [ref=e417]:
+        - img "LanLabs" [ref=e419]
+        - paragraph [ref=e420]: Automatización con IA, bots de WhatsApp y desarrollo web para que tu negocio crezca en piloto automático.
+      - generic [ref=e421]:
+        - heading "Navegación" [level=4] [ref=e422]
+        - list [ref=e423]:
+          - listitem [ref=e424]:
+            - link "Inicio" [ref=e425] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e426]:
+            - link "Sobre Nosotros" [ref=e427] [cursor=pointer]:
+              - /url: /sobre
+          - listitem [ref=e428]:
+            - link "Servicios" [ref=e429] [cursor=pointer]:
+              - /url: /servicios
+          - listitem [ref=e430]:
+            - link "Portafolio" [ref=e431] [cursor=pointer]:
+              - /url: /portafolio
+          - listitem [ref=e432]:
+            - link "Contacto" [ref=e433] [cursor=pointer]:
+              - /url: /contacto
+      - generic [ref=e434]:
+        - heading "Redes" [level=4] [ref=e435]
+        - list [ref=e436]:
+          - listitem [ref=e437]:
+            - link "Instagram" [ref=e438] [cursor=pointer]:
+              - /url: https://instagram.com/s2.h0_?igsh=MW42NDd1NzJ2a3FpZA%3D%3D&utm_source=qr
+          - listitem [ref=e439]:
+            - link "WhatsApp" [ref=e440] [cursor=pointer]:
+              - /url: https://wa.me/593992672980
+          - listitem [ref=e441]:
+            - link "Telegram" [ref=e442] [cursor=pointer]:
+              - /url: https://t.me/alexander_mc11
+      - generic [ref=e443]:
+        - heading "Legal" [level=4] [ref=e444]
+        - paragraph [ref=e445]:
+          - text: © 2026 LanLabs. Todos los derechos reservados.
+          - text: Sitio en construcción constante (como todo buen laboratorio).
+  - button "✉️" [ref=e448] [cursor=pointer]

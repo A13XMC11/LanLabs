@@ -12,6 +12,7 @@ import About from './pages/About.jsx';
 import Services from './pages/Services.jsx';
 import Portfolio from './pages/Portfolio.jsx';
 import Contact from './pages/Contact.jsx';
+import Planes from './pages/Planes.jsx';
 
 function PageWrapper({ children }) {
   const location = useLocation();
@@ -43,6 +44,7 @@ export default function App() {
           <Route path="/servicios" element={<Services />} />
           <Route path="/portafolio" element={<Portfolio />} />
           <Route path="/contacto" element={<Contact />} />
+          <Route path="/planes" element={<Planes />} />
         </Routes>
       </PageWrapper>
       <Footer />

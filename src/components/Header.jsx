@@ -108,6 +108,18 @@ export default function Header({ theme }) {
             Portafolio
           </NavLink>
           <NavLink
+            to="/planes"
+            className={({ isActive }) =>
+              `${navLinkBase} ${
+                isActive
+                  ? 'bg-slate-100 text-lan-primary dark:bg-slate-800 dark:text-lan-accent'
+                  : 'text-slate-600 dark:text-slate-200'
+              }`
+            }
+          >
+            Planes Web
+          </NavLink>
+          <NavLink
             to="/contacto"
             className={({ isActive }) =>
               `${navLinkBase} ${
@@ -223,6 +235,19 @@ export default function Header({ theme }) {
                 }
               >
                 Portafolio
+              </NavLink>
+              <NavLink
+                to="/planes"
+                onClick={() => setMobileOpen(false)}
+                className={({ isActive }) =>
+                  `${navLinkBase} w-full text-left ${
+                    isActive
+                      ? 'bg-slate-100 text-lan-primary dark:bg-slate-800 dark:text-lan-accent'
+                      : 'text-slate-50'
+                  }`
+                }
+              >
+                Planes Web
               </NavLink>
               <NavLink
                 to="/contacto"
