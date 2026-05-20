@@ -42,11 +42,9 @@ const PLANS = [
     ctaMessage: 'Hola LanLabs 👋 Me interesa el Plan Profesional de desarrollo web ($800–1,200).',
     features: [
       'Hasta 15 páginas + blog',
-      'CMS para gestionar contenido',
       'SEO avanzado + sitemap automático',
       'Formularios dinámicos',
       'Integración redes sociales',
-      'Analíticas básicas (GA4)',
     ],
   },
   {
@@ -60,7 +58,6 @@ const PLANS = [
     features: [
       'Tienda online (ecommerce)',
       'Pasarela de pagos integrada',
-      'Integración CRM o automatización',
       'Dashboard de pedidos/clientes',
       'SEO técnico completo',
       'Soporte 30 días post-lanzamiento',
