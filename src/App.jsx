@@ -1,5 +1,5 @@
 // src/App.jsx
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTheme } from './hooks/useTheme.js';
@@ -8,11 +8,11 @@ import Footer from './components/Footer.jsx';
 import ContactFloat from './components/ContactFloat.jsx';
 
 import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
-import Services from './pages/Services.jsx';
-import Portfolio from './pages/Portfolio.jsx';
-import Contact from './pages/Contact.jsx';
-import Planes from './pages/Planes.jsx';
+const About     = lazy(() => import('./pages/About.jsx'));
+const Services  = lazy(() => import('./pages/Services.jsx'));
+const Portfolio = lazy(() => import('./pages/Portfolio.jsx'));
+const Contact   = lazy(() => import('./pages/Contact.jsx'));
+const Planes    = lazy(() => import('./pages/Planes.jsx'));
 
 function PageWrapper({ children }) {
   const location = useLocation();
@@ -42,16 +42,18 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-lan-dark text-slate-900 dark:text-slate-100">
       <Header theme={theme} />
-      <PageWrapper>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/sobre" element={<About />} />
-          <Route path="/servicios" element={<Services />} />
-          <Route path="/portafolio" element={<Portfolio />} />
-          <Route path="/contacto" element={<Contact />} />
-          <Route path="/planes" element={<Planes />} />
-        </Routes>
-      </PageWrapper>
+      <Suspense fallback={null}>
+        <PageWrapper>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/sobre" element={<About />} />
+            <Route path="/servicios" element={<Services />} />
+            <Route path="/portafolio" element={<Portfolio />} />
+            <Route path="/contacto" element={<Contact />} />
+            <Route path="/planes" element={<Planes />} />
+          </Routes>
+        </PageWrapper>
+      </Suspense>
       <Footer />
       <ContactFloat />
     </div>
