@@ -1,4 +1,4 @@
-// Scroll-driven video hero — video.currentTime scrubs with scroll position
+// Scroll-driven video hero — all per-frame DOM updates bypass React state
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import CTAButton from './CTAButton.jsx';
@@ -11,16 +11,25 @@ function phase(p, start, end) {
 }
 
 export default function HeroVideo() {
-  const containerRef = useRef(null);
-  const videoRef     = useRef(null);
-  const rafRef       = useRef(null);
+  const containerRef    = useRef(null);
+  const videoRef        = useRef(null);
+  const tickingRef      = useRef(false);
+  const isMobileRef     = useRef(typeof window !== 'undefined' && window.innerWidth < 768);
 
-  const [progress,    setProgress]    = useState(0);
-  const [videoReady,  setVideoReady]  = useState(false);
-  const [isMobile,    setIsMobile]    = useState(
+  // Animated DOM refs — bypass React re-renders on every scroll tick
+  const progressBarRef    = useRef(null);
+  const progressTextRef   = useRef(null);
+  const progressAccentRef = useRef(null);
+  const overlayRef        = useRef(null);
+  const subtextRef        = useRef(null);
+  const ctaRef            = useRef(null);
+  const statsRef          = useRef(null);
+  const scrollHintRef     = useRef(null);
+
+  const [videoReady, setVideoReady] = useState(false);
+  const [isMobile,   setIsMobile]   = useState(
     () => typeof window !== 'undefined' && window.innerWidth < 768
   );
-  const isMobileRef = useRef(typeof window !== 'undefined' && window.innerWidth < 768);
 
   // ── Mobile detection ────────────────────────────────────────────────
   useEffect(() => {
@@ -33,33 +42,85 @@ export default function HeroVideo() {
     return () => window.removeEventListener('resize', check);
   }, []);
 
-  // ── Scroll → video scrub ────────────────────────────────────────────
+  // ── Scroll → direct DOM updates (no React state) ────────────────────
   const tick = useCallback(() => {
     const container = containerRef.current;
     const video     = videoRef.current;
-    if (!container) return;
+    if (!container) { tickingRef.current = false; return; }
 
     const rect       = container.getBoundingClientRect();
     const scrollable = rect.height - window.innerHeight;
     const scrolled   = Math.max(0, -rect.top);
     const p          = scrollable > 0 ? Math.min(1, scrolled / scrollable) : 0;
 
-    setProgress(p);
+    // ── Video scrub ──────────────────────────────────────────────────
     if (!isMobileRef.current && video && video.readyState >= 2 && video.duration) {
-      video.currentTime = p * video.duration;
+      const target = p * video.duration;
+      // fastSeek is less accurate but much smoother for scrubbing
+      if (video.fastSeek) {
+        video.fastSeek(target);
+      } else {
+        video.currentTime = target;
+      }
     }
+
+    // ── Progress bar & text ──────────────────────────────────────────
+    const pct = `${p * 100}%`;
+    if (progressBarRef.current)  progressBarRef.current.style.width = pct;
+    if (progressTextRef.current) progressTextRef.current.textContent = `${Math.round(p * 100)}%`;
+
+    // ── Left-edge progress accent (desktop) ─────────────────────────
+    if (progressAccentRef.current) progressAccentRef.current.style.height = pct;
+
+    // ── Main gradient overlay ────────────────────────────────────────
+    if (overlayRef.current && !isMobileRef.current) {
+      const a = 0.72 + p * 0.12;
+      overlayRef.current.style.background = `linear-gradient(
+        108deg,
+        rgba(2,16,36,${a})        0%,
+        rgba(2,16,36,${a - 0.15}) 38%,
+        rgba(2,16,36,${a - 0.40}) 62%,
+        rgba(2,16,36,0.08)        100%
+      )`;
+    }
+
+    // ── Content phases ───────────────────────────────────────────────
+    const m = isMobileRef.current;
+    const subtextOp = m ? phase(p, 0, 0.10)    : phase(p, 0.12, 0.28);
+    const ctaOp     = m ? phase(p, 0.02, 0.14) : phase(p, 0.38, 0.52);
+    const statsOp   = m ? phase(p, 0.10, 0.25) : phase(p, 0.64, 0.78);
+    const hintOp    = p < 0.04 ? 1 - p / 0.04 : 0;
+    const tY        = (op) => op < 0.98 ? `${(1 - op) * 16}px` : '0px';
+
+    if (subtextRef.current) {
+      subtextRef.current.style.opacity   = subtextOp;
+      subtextRef.current.style.transform = `translateY(${tY(subtextOp)})`;
+    }
+    if (ctaRef.current) {
+      ctaRef.current.style.opacity   = ctaOp;
+      ctaRef.current.style.transform = `translateY(${tY(ctaOp)})`;
+    }
+    if (statsRef.current) {
+      statsRef.current.style.opacity   = statsOp;
+      statsRef.current.style.transform = `translateY(${tY(statsOp)})`;
+    }
+    if (scrollHintRef.current) {
+      scrollHintRef.current.style.opacity = hintOp;
+    }
+
+    tickingRef.current = false;
   }, []);
 
   useEffect(() => {
     const onScroll = () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      rafRef.current = requestAnimationFrame(tick);
+      if (tickingRef.current) return;
+      tickingRef.current = true;
+      requestAnimationFrame(tick);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
+    // Run once to set initial state
+    tick();
+    return () => window.removeEventListener('scroll', onScroll);
   }, [tick]);
 
   // ── Mobile: autoplay once ───────────────────────────────────────────
@@ -68,24 +129,12 @@ export default function HeroVideo() {
     videoRef.current?.play().catch(() => {});
   }, [isMobile, videoReady]);
 
-  // ── Opacity phases ──────────────────────────────────────────────────
-  // On mobile: all elements visible immediately so CTAs are always reachable
-  const subtextOp    = isMobile ? phase(progress, 0, 0.10)    : phase(progress, 0.12, 0.28);
-  const ctaOp        = isMobile ? phase(progress, 0.02, 0.14) : phase(progress, 0.38, 0.52);
-  const statsOp      = isMobile ? phase(progress, 0.10, 0.25) : phase(progress, 0.64, 0.78);
-  const scrollHintOp = progress < 0.04 ? 1 - progress / 0.04 : 0;
+  // ── Responsive static values (only re-computed on mobile change) ────
+  const containerH   = isMobile ? '200vh' : '280vh';
+  const headingSize  = isMobile ? 'clamp(36px, 9vw, 54px)' : 'clamp(48px, 6.5vw, 88px)';
+  const headingShadow = '0 2px 28px rgba(2,16,36,0.85), 0 0 60px rgba(2,16,36,0.5)';
 
-  const tY = (op) => (op < 0.98 ? `${(1 - op) * 16}px` : '0px');
-
-  // ── Responsive values ───────────────────────────────────────────────
-  // Mobile: 200vh → scrollable = 100vh of scrub room (video plays across 1 screen height of scroll)
-  // Desktop: 280vh → more cinematic, slower reveal
-  const containerH = isMobile ? '200vh' : '280vh';
-
-  // Mobile: vertical gradient (text top, video visible in lower half)
-  // Desktop: horizontal gradient (text left, video right)
-  const overlayAlpha = isMobile ? 1 : (0.72 + progress * 0.12);
-  const mainOverlay  = isMobile
+  const mainOverlayInitial = isMobile
     ? `linear-gradient(
         to bottom,
         rgba(2,16,36,0.88) 0%,
@@ -97,37 +146,31 @@ export default function HeroVideo() {
       )`
     : `linear-gradient(
         108deg,
-        rgba(2,16,36,${overlayAlpha})        0%,
-        rgba(2,16,36,${overlayAlpha - 0.15}) 38%,
-        rgba(2,16,36,${overlayAlpha - 0.40}) 62%,
-        rgba(2,16,36,0.08)                   100%
+        rgba(2,16,36,0.72) 0%,
+        rgba(2,16,36,0.57) 38%,
+        rgba(2,16,36,0.32) 62%,
+        rgba(2,16,36,0.08) 100%
       )`;
-
-  // Font size: smaller on mobile for line wrapping
-  const headingSize = isMobile ? 'clamp(36px, 9vw, 54px)' : 'clamp(48px, 6.5vw, 88px)';
-
-  // Text shadow: essential on mobile where background can bleed through
-  const headingShadow = '0 2px 28px rgba(2,16,36,0.85), 0 0 60px rgba(2,16,36,0.5)';
 
   return (
     // ── Scroll container ──────────────────────────────────────────────
-    <div ref={containerRef} style={{ height: containerH }}>
+    <div ref={containerRef} style={{ height: containerH, contain: 'layout style' }}>
 
       {/* ── Sticky viewport ─────────────────────────────────────────── */}
-      {/* poster as CSS bg = instant first frame, no FOUC */}
-      {/* h-screen fallback + dvh fix for iOS Safari (browser chrome changes vh) */}
       <div
         className="sticky top-0 h-screen overflow-hidden"
         style={{
           height: '100dvh',
           backgroundImage: 'url(/hero-poster.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: isMobile ? '72% center' : 'center center',
+          backgroundSize: isMobile ? 'contain' : 'cover',
+          backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
           backgroundColor: '#021024',
+          willChange: 'transform',
+          transform: 'translateZ(0)',
         }}
       >
-        {/* Video — layers on top, replaces poster once loaded */}
+        {/* Video — GPU-composited layer */}
         <video
           ref={videoRef}
           className="absolute"
@@ -135,26 +178,29 @@ export default function HeroVideo() {
             inset: 0,
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
-            objectPosition: isMobile ? '72% center' : 'center center',
+            objectFit: isMobile ? 'contain' : 'cover',
+            objectPosition: 'center center',
             opacity: videoReady ? 1 : 0,
             transition: 'opacity 0.6s ease',
+            willChange: 'contents',
+            transform: 'translateZ(0)',
           }}
           preload="auto"
           muted
           playsInline
+          poster="/hero-poster.jpg"
           onLoadedData={() => setVideoReady(true)}
         >
+          <source src="/hero.webm" type="video/webm" />
           <source src="/hero.mp4" type="video/mp4" />
         </video>
 
         {/* ── Gradient overlays ──────────────────────────────────────── */}
-        {/* Main directional overlay */}
         <div
+          ref={overlayRef}
           className="absolute inset-0 pointer-events-none"
-          style={{ background: mainOverlay }}
+          style={{ background: mainOverlayInitial }}
         />
-        {/* Top vignette (navbar breathing room) */}
         <div
           className="absolute top-0 left-0 right-0 pointer-events-none"
           style={{
@@ -162,7 +208,6 @@ export default function HeroVideo() {
             background: 'linear-gradient(to bottom, rgba(2,16,36,0.75) 0%, transparent 100%)',
           }}
         />
-        {/* Bottom vignette (progress bar area) */}
         <div
           className="absolute bottom-0 left-0 right-0 pointer-events-none"
           style={{
@@ -178,8 +223,9 @@ export default function HeroVideo() {
             style={{ width: '3px', background: 'rgba(84,131,179,0.12)' }}
           >
             <div
+              ref={progressAccentRef}
               style={{
-                height: `${progress * 100}%`,
+                height: '0%',
                 background: 'linear-gradient(to bottom, #5483B3, #C1E8FF)',
                 width: '100%',
               }}
@@ -191,9 +237,7 @@ export default function HeroVideo() {
         <div
           className="relative h-full flex flex-col z-10"
           style={{
-            padding: isMobile
-              ? '0 20px'
-              : '0 80px',
+            padding: isMobile ? '0 20px' : '0 80px',
             justifyContent: isMobile ? 'flex-start' : 'space-between',
           }}
         >
@@ -217,7 +261,6 @@ export default function HeroVideo() {
 
           {/* COPY BLOCK: H1 + subtext + CTAs ─────────────────────────── */}
           <div style={{ marginTop: isMobile ? '24px' : 0 }}>
-            {/* H1 */}
             <h1
               className="font-display font-bold text-white tracking-tight"
               style={{
@@ -242,15 +285,15 @@ export default function HeroVideo() {
               </span>
             </h1>
 
-            {/* Subtext */}
+            {/* Subtext — opacity/transform driven by direct DOM ref */}
             <p
+              ref={subtextRef}
               className="text-slate-300"
               style={{
                 fontSize: isMobile ? '14px' : 'clamp(15px, 1.6vw, 19px)',
                 lineHeight: 1.65,
                 maxWidth: isMobile ? '100%' : '480px',
-                opacity: subtextOp,
-                transform: `translateY(${tY(subtextOp)})`,
+                opacity: isMobile ? 1 : 0,
                 transition: 'opacity 0.55s ease-out, transform 0.55s ease-out',
                 marginBottom: isMobile ? '20px' : '32px',
                 textShadow: '0 1px 12px rgba(2,16,36,0.7)',
@@ -260,13 +303,13 @@ export default function HeroVideo() {
               que captan clientes — para que crezcas sin trabajar más.
             </p>
 
-            {/* CTAs */}
+            {/* CTAs — opacity/transform driven by direct DOM ref */}
             <div
+              ref={ctaRef}
               className="flex flex-wrap items-center"
               style={{
                 gap: isMobile ? '10px' : '12px',
-                opacity: ctaOp,
-                transform: `translateY(${tY(ctaOp)})`,
+                opacity: isMobile ? 1 : 0,
                 transition: 'opacity 0.5s ease-out, transform 0.5s ease-out',
               }}
             >
@@ -292,28 +335,27 @@ export default function HeroVideo() {
             </div>
           </div>
 
-          {/* SPACER on desktop — pushes stats to bottom */}
           {!isMobile && <div className="flex-1" />}
 
           {/* BOTTOM: stats + progress bar ─────────────────────────────── */}
           <div style={{ paddingBottom: isMobile ? '20px' : '28px', marginTop: isMobile ? 'auto' : 0 }}>
 
-            {/* Stats strip */}
+            {/* Stats strip — opacity/transform driven by direct DOM ref */}
             <div
+              ref={statsRef}
               className="flex flex-wrap items-center"
               style={{
                 gap: isMobile ? '16px 20px' : '28px',
                 marginBottom: isMobile ? '14px' : '20px',
-                opacity: statsOp,
-                transform: `translateY(${tY(statsOp)})`,
+                opacity: isMobile ? 1 : 0,
                 transition: 'opacity 0.5s ease-out, transform 0.5s ease-out',
               }}
             >
               {[
-                { n: '10+',  l: 'proyectos' },
-                { n: '3',    l: 'países' },
-                { n: '500h+',l: 'automatizadas' },
-                { n: '24/7', l: 'activo' },
+                { n: '10+',   l: 'proyectos' },
+                { n: '3',     l: 'países' },
+                { n: '500h+', l: 'automatizadas' },
+                { n: '24/7',  l: 'activo' },
               ].map(({ n, l }) => (
                 <div key={l} style={{ textShadow: '0 1px 8px rgba(2,16,36,0.8)' }}>
                   <p
@@ -353,8 +395,9 @@ export default function HeroVideo() {
                 style={{ height: '2px', background: 'rgba(255,255,255,0.10)' }}
               >
                 <div
+                  ref={progressBarRef}
                   style={{
-                    width: `${progress * 100}%`,
+                    width: '0%',
                     height: '100%',
                     background: 'linear-gradient(to right, #5483B3, #C1E8FF)',
                     borderRadius: '9999px',
@@ -363,20 +406,22 @@ export default function HeroVideo() {
               </div>
 
               <span
+                ref={progressTextRef}
                 className="font-mono text-slate-500 shrink-0 tabular-nums"
                 style={{ fontSize: '10px', minWidth: '3ch' }}
               >
-                {Math.round(progress * 100)}%
+                0%
               </span>
 
               {/* Scroll hint */}
               <div
+                ref={scrollHintRef}
                 className="absolute flex flex-col items-center gap-1 pointer-events-none"
                 style={{
                   left: '50%',
                   transform: 'translateX(-50%)',
                   bottom: isMobile ? '18px' : '22px',
-                  opacity: scrollHintOp,
+                  opacity: 1,
                   transition: 'opacity 0.4s ease',
                 }}
               >

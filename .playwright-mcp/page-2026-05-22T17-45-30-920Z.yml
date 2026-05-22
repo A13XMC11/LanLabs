@@ -1,0 +1,349 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "LanLabs" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "LanLabs" [ref=e8]
+      - button "Abrir menú" [ref=e10] [cursor=pointer]:
+        - generic [ref=e11]: Abrir menú
+  - generic [ref=e17]:
+    - generic [ref=e21]:
+      - generic [ref=e23]: IA · Automatización · Web
+      - generic [ref=e25]:
+        - heading "Tu negocio trabaja solo. Tú escalas." [level=1] [ref=e26]:
+          - text: Tu negocio
+          - text: trabaja solo.
+          - text: Tú escalas.
+        - paragraph [ref=e27]: Bots de WhatsApp con IA, automatización de procesos y páginas que captan clientes — para que crezcas sin trabajar más.
+        - generic [ref=e28]:
+          - link "Automatizar mi negocio" [ref=e29] [cursor=pointer]:
+            - /url: https://wa.me/593992672980?text=Hola%20LanLabs%20%F0%9F%91%8B%20Me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20automatizaci%C3%B3n%20con%20IA%20y%20bots%20para%20mi%20negocio.
+            - img [ref=e30]
+            - generic [ref=e32]: Automatizar mi negocio
+          - link "Ver soluciones" [ref=e33] [cursor=pointer]:
+            - /url: /servicios
+            - text: Ver soluciones
+            - img [ref=e34]
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - paragraph [ref=e39]: 10+
+            - paragraph [ref=e40]: proyectos
+          - generic [ref=e41]:
+            - paragraph [ref=e42]: "3"
+            - paragraph [ref=e43]: países
+          - generic [ref=e44]:
+            - paragraph [ref=e45]: 500h+
+            - paragraph [ref=e46]: automatizadas
+          - generic [ref=e47]:
+            - paragraph [ref=e48]: 24/7
+            - paragraph [ref=e49]: activo
+        - generic [ref=e50]:
+          - generic [ref=e52]: 0%
+          - generic:
+            - generic: Desliza
+            - img
+    - region "Resultados en números" [ref=e53]:
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e59]: 0+
+          - paragraph [ref=e60]: Proyectos entregados
+          - paragraph [ref=e61]: web · IA · automatización
+        - generic [ref=e62]:
+          - generic [ref=e63]: "0"
+          - paragraph [ref=e64]: Países con clientes activos
+          - paragraph [ref=e65]: Ecuador · Colombia · EEUU
+        - generic [ref=e66]:
+          - generic [ref=e67]: 0h+
+          - paragraph [ref=e68]: Horas de trabajo automatizadas
+          - paragraph [ref=e69]: sin esfuerzo humano
+        - generic [ref=e70]:
+          - generic [ref=e71]: 0%
+          - paragraph [ref=e72]: Con soporte post-lanzamiento
+          - paragraph [ref=e73]: no desaparecemos
+    - region "Soluciones que generan resultados reales" [ref=e74]:
+      - generic [ref=e75]:
+        - text: Lo que hacemos
+        - generic [ref=e76]:
+          - heading "Soluciones que generan resultados reales" [level=2] [ref=e77]
+          - link "Ver todos los servicios" [ref=e78] [cursor=pointer]:
+            - /url: /servicios
+            - text: Ver todos los servicios
+            - img [ref=e79]
+        - paragraph [ref=e81]: Desde bots inteligentes hasta páginas que convierten. Elige lo que necesitas, combínalos, o déjanos recomendar la mejor solución para tu negocio.
+      - generic [ref=e82]:
+        - article [ref=e83]:
+          - generic [ref=e85]:
+            - img [ref=e87]
+            - generic [ref=e89]: Recomendado
+          - generic [ref=e90]:
+            - heading "Bot de WhatsApp con IA" [level=3] [ref=e91]
+            - text: 24/7 sin descanso
+          - paragraph [ref=e92]: Un asistente inteligente que atiende a tus clientes 24/7, califica prospectos, responde preguntas y agenda citas — todo desde WhatsApp.
+          - list [ref=e93]:
+            - listitem [ref=e94]:
+              - img [ref=e96]
+              - generic [ref=e98]: Respuestas automáticas con contexto de tu negocio
+            - listitem [ref=e99]:
+              - img [ref=e101]
+              - generic [ref=e103]: Calificación de clientes y captura de datos
+            - listitem [ref=e104]:
+              - img [ref=e106]
+              - generic [ref=e108]: Integración con agenda o CRM
+          - link "Quiero saber más" [ref=e109] [cursor=pointer]:
+            - /url: https://wa.me/593992672980?text=Hola%20LanLabs%20%F0%9F%91%8B%20Me%20interesa%20el%20Bot%20de%20WhatsApp%20con%20IA%20para%20mi%20negocio.
+            - text: Quiero saber más
+            - img [ref=e110]
+        - article [ref=e112]:
+          - img [ref=e115]
+          - generic [ref=e117]:
+            - heading "Automatización con IA" [level=3] [ref=e118]
+            - text: Ahorra 20+ h/mes
+          - paragraph [ref=e119]: Flujos que conectan tus herramientas, procesan datos y actúan solos. Desde correos automáticos hasta reportes generados por IA.
+          - list [ref=e120]:
+            - listitem [ref=e121]:
+              - img [ref=e123]
+              - generic [ref=e125]: Workflows con n8n + modelos de lenguaje
+            - listitem [ref=e126]:
+              - img [ref=e128]
+              - generic [ref=e130]: Clasificación y resumen automático de información
+            - listitem [ref=e131]:
+              - img [ref=e133]
+              - generic [ref=e135]: Alertas y notificaciones inteligentes
+          - link "Quiero saber más" [ref=e136] [cursor=pointer]:
+            - /url: https://wa.me/593992672980?text=Hola%20LanLabs%20%F0%9F%91%8B%20Quiero%20automatizar%20procesos%20en%20mi%20negocio%20con%20IA.
+            - text: Quiero saber más
+            - img [ref=e137]
+        - article [ref=e139]:
+          - img [ref=e142]
+          - generic [ref=e144]:
+            - heading "Desarrollo Web" [level=3] [ref=e145]
+            - text: Listo en días
+          - paragraph [ref=e146]: Sitios rápidos, modernos y enfocados en conversión. Landing pages, sitios corporativos y páginas dinámicas con React y Tailwind.
+          - list [ref=e147]:
+            - listitem [ref=e148]:
+              - img [ref=e150]
+              - generic [ref=e152]: Landing pages de alto impacto
+            - listitem [ref=e153]:
+              - img [ref=e155]
+              - generic [ref=e157]: Sitios con filtros, dashboards y datos en tiempo real
+            - listitem [ref=e158]:
+              - img [ref=e160]
+              - generic [ref=e162]: SEO técnico y rendimiento optimizado
+          - link "Quiero saber más" [ref=e163] [cursor=pointer]:
+            - /url: https://wa.me/593992672980?text=Hola%20LanLabs%20%F0%9F%91%8B%20Necesito%20una%20p%C3%A1gina%20web%20para%20mi%20negocio.
+            - text: Quiero saber más
+            - img [ref=e164]
+    - generic [ref=e169]:
+      - generic [ref=e170]:
+        - generic [ref=e171]:
+          - generic [ref=e172]: Bot de WhatsApp con IA
+          - heading "Tu negocio, atendiendo 24/7" [level=2] [ref=e173]
+          - paragraph [ref=e174]: Un asistente inteligente que responde a tus clientes instantáneamente, califica prospectos y agenda citas — mientras tú haces lo que realmente importa.
+        - list [ref=e175]:
+          - listitem [ref=e176]:
+            - generic [ref=e177]: ✓
+            - generic [ref=e178]: Atiende y califica clientes automáticamente
+          - listitem [ref=e179]:
+            - generic [ref=e180]: ✓
+            - generic [ref=e181]: Responde preguntas frecuentes al instante
+          - listitem [ref=e182]:
+            - generic [ref=e183]: ✓
+            - generic [ref=e184]: Agenda citas o redirige a ventas
+          - listitem [ref=e185]:
+            - generic [ref=e186]: ✓
+            - generic [ref=e187]: Se integra con tu CRM o base de datos
+        - link "Quiero un bot para mi negocio" [ref=e189] [cursor=pointer]:
+          - /url: https://wa.me/593992672980?text=Hola%20LanLabs%20%F0%9F%91%8B%20Me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20automatizaci%C3%B3n%20con%20IA%20y%20bots%20para%20mi%20negocio.
+          - img [ref=e190]
+          - generic [ref=e192]: Quiero un bot para mi negocio
+      - generic [ref=e194]:
+        - generic [ref=e195]:
+          - img [ref=e196]
+          - generic [ref=e198]: LanLabs Bot
+          - generic [ref=e199]: en línea
+        - generic [ref=e200]:
+          - generic [ref=e202]: ¡Hola! Soy el asistente de LanLabs 🤖 ¿En qué puedo ayudarte hoy?
+          - generic [ref=e204]: Hola, quiero saber si pueden hacer un bot para mi restaurante
+          - generic [ref=e206]: "¡Claro que sí! ¿Cuál es el nombre de tu restaurante y qué necesitas automatizar? (ej: pedidos, reservas, preguntas frecuentes)"
+          - generic [ref=e208]: Se llama Montreal. Quiero que responda preguntas del menú y tome pedidos
+          - generic [ref=e210]: Perfecto 🍔 Puedo hacer eso y también conectarlo con tu WhatsApp Business. ¿Te gustaría agendar una llamada de 15 minutos para ver los detalles?
+          - generic [ref=e212]: Sí, me interesa
+          - generic [ref=e214]: ¡Genial! Te paso con el equipo ahora mismo 🚀
+        - generic [ref=e216]: Powered by IA
+    - region "Proyectos que ya están generando valor" [ref=e217]:
+      - generic [ref=e218]:
+        - text: Casos reales
+        - generic [ref=e219]:
+          - heading "Proyectos que ya están generando valor" [level=2] [ref=e220]
+          - link "Ver portafolio completo" [ref=e221] [cursor=pointer]:
+            - /url: /portafolio
+            - text: Ver portafolio completo
+            - img [ref=e222]
+        - paragraph [ref=e224]: Proyectos reales de web, automatización e IA — con resultados documentados.
+      - generic [ref=e225]:
+        - article [ref=e226]:
+          - img "Montreal Fast Food" [ref=e227]
+          - generic [ref=e228]:
+            - heading "Montreal Fast Food" [level=3] [ref=e229]
+            - generic [ref=e230]: Web
+          - paragraph [ref=e231]: Landing rápida y visual para un restaurante, enfocada en antojar y convertir.
+          - paragraph [ref=e232]: "Stack: React, Tailwind, Vercel"
+          - paragraph [ref=e233]: "Impacto: Más claridad en el menú y pedidos más organizados."
+          - link "Ver proyecto →" [ref=e234] [cursor=pointer]:
+            - /url: https://montreal-fastfood.vercel.app/
+        - article [ref=e235]:
+          - img "FTSamuelMartinez" [ref=e236]
+          - generic [ref=e237]:
+            - heading "FTSamuelMartinez" [level=3] [ref=e238]
+            - generic [ref=e239]: Web
+          - paragraph [ref=e240]: Sitio profesional para centro de fisioterapia, con enfoque en claridad y confianza.
+          - paragraph [ref=e241]: "Stack: React, Tailwind, Vercel"
+          - paragraph [ref=e242]: "Impacto: Mejor presentación de servicios y contacto más directo con pacientes."
+          - link "Ver proyecto →" [ref=e243] [cursor=pointer]:
+            - /url: https://ftsamuelmartinez.vercel.app/
+        - article [ref=e244]:
+          - img "Recetario Digital" [ref=e245]
+          - generic [ref=e246]:
+            - heading "Recetario Digital" [level=3] [ref=e247]
+            - generic [ref=e248]: Web
+          - paragraph [ref=e249]: App para organizar recetas con categorías y vista clara de ingredientes.
+          - paragraph [ref=e250]: "Stack: React, Local Storage"
+          - paragraph [ref=e251]: "Impacto: Ahorro de tiempo buscando recetas dispersas."
+    - region "Lo que dicen quienes ya trabajan con nosotros" [ref=e252]:
+      - generic [ref=e253]:
+        - generic [ref=e254]:
+          - text: Clientes que confían
+          - heading "Lo que dicen quienes ya trabajan con nosotros" [level=2] [ref=e255]
+        - generic [ref=e256]:
+          - article [ref=e257]:
+            - generic: "\""
+            - generic [ref=e258]:
+              - img [ref=e259]
+              - img [ref=e261]
+              - img [ref=e263]
+              - img [ref=e265]
+              - img [ref=e267]
+            - paragraph [ref=e269]: "\"Ahora tengo una página que realmente se siente como mi negocio: rápida, sencilla y lista para antojar.\""
+            - generic [ref=e270]:
+              - generic [ref=e271]: M
+              - generic [ref=e272]:
+                - paragraph [ref=e273]: Michel
+                - paragraph [ref=e274]: Dueño de Montreal Fast Food
+              - generic [ref=e275]: Desarrollo Web
+          - article [ref=e276]:
+            - generic: "\""
+            - generic [ref=e277]:
+              - img [ref=e278]
+              - img [ref=e280]
+              - img [ref=e282]
+              - img [ref=e284]
+              - img [ref=e286]
+            - paragraph [ref=e288]: "\"LanLabs me ayudó a explicar mis servicios de forma clara y profesional. Mis pacientes llegan mejor informados.\""
+            - generic [ref=e289]:
+              - generic [ref=e290]: SM
+              - generic [ref=e291]:
+                - paragraph [ref=e292]: Samuel Martínez
+                - paragraph [ref=e293]: Fisioterapeuta
+              - generic [ref=e294]: Desarrollo Web
+          - article [ref=e295]:
+            - generic: "\""
+            - generic [ref=e296]:
+              - img [ref=e297]
+              - img [ref=e299]
+              - img [ref=e301]
+              - img [ref=e303]
+              - img [ref=e305]
+            - paragraph [ref=e307]: "\"Pasamos de Excel caótico a reportes automáticos. Ahora sabemos qué pasa con cada vehículo sin dolor de cabeza.\""
+            - generic [ref=e308]:
+              - generic [ref=e309]: EM
+              - generic [ref=e310]:
+                - paragraph [ref=e311]: Equipo MotorPlaza
+                - paragraph [ref=e312]: Gestión Vehicular
+              - generic [ref=e313]: Dashboard + n8n
+          - article [ref=e314]:
+            - generic: "\""
+            - generic [ref=e315]:
+              - img [ref=e316]
+              - img [ref=e318]
+              - img [ref=e320]
+              - img [ref=e322]
+              - img [ref=e324]
+            - paragraph [ref=e326]: "\"El bot atiende a mis clientes cuando estoy dormida. Literalmente vendí más sin hacer nada extra.\""
+            - generic [ref=e327]:
+              - generic [ref=e328]: VR
+              - generic [ref=e329]:
+                - paragraph [ref=e330]: Valentina R.
+                - paragraph [ref=e331]: Emprendedora, tienda online
+              - generic [ref=e332]: Bot de WhatsApp con IA
+    - region "Llamada a la acción final" [ref=e333]:
+      - generic [ref=e335]:
+        - generic [ref=e336]:
+          - generic [ref=e337]: Siguiente paso
+          - heading "¿Listo para que tu negocio trabaje mientras tú duermes?" [level=2] [ref=e339]:
+            - text: ¿Listo para que tu negocio
+            - text: trabaje mientras tú duermes?
+          - paragraph [ref=e340]: Cuéntanos tu negocio en 5 minutos y te mostramos exactamente qué se puede automatizar. Sin tecnicismos, sin contratos raros, sin presiones.
+        - generic [ref=e341]:
+          - link "Hablar con LanLabs por WhatsApp" [ref=e342] [cursor=pointer]:
+            - /url: https://wa.me/593992672980?text=Hola%20LanLabs%20%F0%9F%91%8B%20Me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20automatizaci%C3%B3n%20con%20IA%20y%20bots%20para%20mi%20negocio.
+            - img [ref=e343]
+            - generic [ref=e345]: Hablar con LanLabs por WhatsApp
+          - link "Explorar servicios primero" [ref=e346] [cursor=pointer]:
+            - /url: /servicios
+            - text: Explorar servicios primero
+            - img [ref=e347]
+        - generic [ref=e349]:
+          - generic [ref=e350]:
+            - img [ref=e351]
+            - text: Respuesta en minutos
+          - generic [ref=e353]:
+            - img [ref=e354]
+            - text: Sin compromisos
+          - generic [ref=e356]:
+            - img [ref=e357]
+            - text: Proyectos desde $300
+          - generic [ref=e359]:
+            - img [ref=e360]
+            - text: 100% online
+  - contentinfo [ref=e362]:
+    - generic [ref=e363]:
+      - generic [ref=e364]:
+        - img "LanLabs" [ref=e366]
+        - paragraph [ref=e367]: Automatización con IA, bots de WhatsApp y desarrollo web para que tu negocio crezca en piloto automático.
+      - generic [ref=e368]:
+        - heading "Navegación" [level=4] [ref=e369]
+        - list [ref=e370]:
+          - listitem [ref=e371]:
+            - link "Inicio" [ref=e372] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e373]:
+            - link "Sobre Nosotros" [ref=e374] [cursor=pointer]:
+              - /url: /sobre
+          - listitem [ref=e375]:
+            - link "Servicios" [ref=e376] [cursor=pointer]:
+              - /url: /servicios
+          - listitem [ref=e377]:
+            - link "Portafolio" [ref=e378] [cursor=pointer]:
+              - /url: /portafolio
+          - listitem [ref=e379]:
+            - link "Contacto" [ref=e380] [cursor=pointer]:
+              - /url: /contacto
+      - generic [ref=e381]:
+        - heading "Redes" [level=4] [ref=e382]
+        - list [ref=e383]:
+          - listitem [ref=e384]:
+            - link "Instagram" [ref=e385] [cursor=pointer]:
+              - /url: https://instagram.com/s2.h0_?igsh=MW42NDd1NzJ2a3FpZA%3D%3D&utm_source=qr
+          - listitem [ref=e386]:
+            - link "WhatsApp" [ref=e387] [cursor=pointer]:
+              - /url: https://wa.me/593992672980
+          - listitem [ref=e388]:
+            - link "Telegram" [ref=e389] [cursor=pointer]:
+              - /url: https://t.me/alexander_mc11
+      - generic [ref=e390]:
+        - heading "Legal" [level=4] [ref=e391]
+        - paragraph [ref=e392]:
+          - text: © 2026 LanLabs. Todos los derechos reservados.
+          - text: Sitio en construcción constante (como todo buen laboratorio).
+  - button "✉️" [ref=e395] [cursor=pointer]
