@@ -10,12 +10,15 @@ export default function Services() {
     <main className="pt-24 mx-auto max-w-6xl px-4 pb-16 space-y-14">
       {/* Intro Section */}
       <section className="space-y-4 max-w-3xl">
-        <span className="badge-ai">Automatización · IA · Web</span>
-        <h1 className="text-4xl md:text-5xl font-bold">
-          Soluciones que generan resultados
+        <span className="text-xs font-bold tracking-[0.2em] uppercase text-lan-secondary">
+          Automatización · IA · Web
+        </span>
+        <h1 className="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 leading-tight">
+          Soluciones que generan<br />resultados reales para tu negocio
         </h1>
-        <p className="text-slate-600 dark:text-slate-300 text-lg">
-          Elige el servicio que necesitas o combínalos. Adaptable a cualquier presupuesto, enfocado en que ganes más y trabajes menos.
+        <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
+          Elige el servicio que necesitas o combínalos. Adaptable a cualquier presupuesto,
+          enfocado en que ganes más y trabajes menos — sin complicaciones técnicas.
         </p>
       </section>
 
@@ -60,6 +63,8 @@ export default function Services() {
             flagship={services[0].flagship}
             features={services[0].features}
             ctaMessage={services[0].ctaMessage}
+            metric={services[0].metric}
+            iconType={services[0].iconType}
           />
         </div>
 
@@ -73,6 +78,8 @@ export default function Services() {
               flagship={service.flagship}
               features={service.features}
               ctaMessage={service.ctaMessage}
+              metric={service.metric}
+              iconType={service.iconType}
             />
           ))}
         </div>

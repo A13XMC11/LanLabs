@@ -1,5 +1,5 @@
 // src/App.jsx
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTheme } from './hooks/useTheme.js';
@@ -16,6 +16,11 @@ import Planes from './pages/Planes.jsx';
 
 function PageWrapper({ children }) {
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [location.pathname]);
+
   return (
     <AnimatePresence mode="wait">
       <motion.div

@@ -5,12 +5,14 @@ export const services = [
     title: 'Bot de WhatsApp con IA',
     description: 'Un asistente inteligente que atiende a tus clientes 24/7, califica prospectos, responde preguntas y agenda citas — todo desde WhatsApp.',
     category: 'IA',
+    iconType: 'whatsapp',
     flagship: true,
     features: [
       'Respuestas automáticas con contexto de tu negocio',
       'Calificación de clientes y captura de datos',
       'Integración con agenda o CRM',
     ],
+    metric: '24/7 sin descanso',
     ctaMessage: 'Hola LanLabs 👋 Me interesa el Bot de WhatsApp con IA para mi negocio.',
   },
   {
@@ -18,12 +20,14 @@ export const services = [
     title: 'Automatización con IA',
     description: 'Flujos que conectan tus herramientas, procesan datos y actúan solos. Desde correos automáticos hasta reportes generados por IA.',
     category: 'IA',
+    iconType: 'automation',
     flagship: false,
     features: [
       'Workflows con n8n + modelos de lenguaje',
       'Clasificación y resumen automático de información',
       'Alertas y notificaciones inteligentes',
     ],
+    metric: 'Ahorra 20+ h/mes',
     ctaMessage: 'Hola LanLabs 👋 Quiero automatizar procesos en mi negocio con IA.',
   },
   {
@@ -31,12 +35,14 @@ export const services = [
     title: 'Asistentes IA Personalizados',
     description: 'Chatbots entrenados con el conocimiento de tu empresa: responden como tú, conocen tus productos y siempre están disponibles.',
     category: 'IA',
+    iconType: 'robot',
     flagship: false,
     features: [
       'Entrenado con tu documentación y FAQs',
       'Personalidad y tono adaptados a tu marca',
       'Desplegable en web, WhatsApp o Telegram',
     ],
+    metric: 'Tu voz, sin ti',
     ctaMessage: 'Hola LanLabs 👋 Me interesa un asistente IA personalizado para mi negocio.',
   },
   {
@@ -44,12 +50,14 @@ export const services = [
     title: 'Desarrollo Web',
     description: 'Sitios rápidos, modernos y enfocados en conversión. Landing pages, sitios corporativos y páginas dinámicas con React y Tailwind.',
     category: 'Web',
+    iconType: 'web',
     flagship: false,
     features: [
       'Landing pages de alto impacto',
       'Sitios con filtros, dashboards y datos en tiempo real',
       'SEO técnico y rendimiento optimizado',
     ],
+    metric: 'Listo en días',
     ctaMessage: 'Hola LanLabs 👋 Necesito una página web para mi negocio.',
   },
   {
@@ -57,12 +65,14 @@ export const services = [
     title: 'Integraciones',
     description: 'Conectamos tu sitio o bot con las herramientas que ya usas: Supabase, APIs externas, VPS, bases de datos y más.',
     category: 'Integraciones',
+    iconType: 'integrations',
     flagship: false,
     features: [
       'Supabase como backend y autenticación',
       'Conexión con APIs de terceros',
       'Despliegue en VPS propio o Vercel',
     ],
+    metric: 'Todo conectado',
     ctaMessage: 'Hola LanLabs 👋 Necesito integrar herramientas en mi proyecto.',
   },
   {
@@ -70,12 +80,14 @@ export const services = [
     title: 'Automatizaciones con n8n',
     description: 'Flujos que conectan tus apps, envían reportes y hacen el trabajo repetitivo por ti. Sin código innecesario.',
     category: 'Automatización',
+    iconType: 'workflow',
     flagship: false,
     features: [
       'Reportes automáticos por correo o WhatsApp',
       'Sincronización entre apps (CRM, hojas de cálculo, etc.)',
       'Monitoreo y alertas automáticas',
     ],
+    metric: '0 tareas manuales',
     ctaMessage: 'Hola LanLabs 👋 Me interesan las automatizaciones con n8n.',
   },
 ];

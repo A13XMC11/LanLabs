@@ -2,27 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fuente básica y fondo */
+/* ─── Base typography ───────────────────────────────────────────────── */
 @layer base {
   html {
     @apply scroll-smooth;
   }
   body {
     @apply bg-slate-50 text-slate-900 dark:bg-lan-dark dark:text-slate-100;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Syne', system-ui, sans-serif;
   }
 }
 
-/* Clases de glassmorphism leve */
+/* ─── Navigation glass ──────────────────────────────────────────────── */
 .glass-nav {
-  @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-700/60;
+  @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-md
+         border-b border-slate-200/60 dark:border-slate-700/60;
 }
 
+/* ─── Card system ───────────────────────────────────────────────────── */
 .card {
-  @apply bg-white dark:bg-slate-900 rounded-2xl shadow-soft-lg border border-slate-200/60 dark:border-slate-700/60;
+  @apply bg-white dark:bg-slate-900 rounded-2xl
+         shadow-soft-lg border border-slate-200/70 dark:border-slate-700/60;
 }
 
-/* Tarjetas glass de redes sociales (inspirado en Uiverse) */
+.card-flagship {
+  @apply card border-2 border-lan-secondary dark:border-lan-secondary/60
+         ring-1 ring-lan-secondary/20;
+}
+
+/* Premium card with gradient border on hover */
+.card-premium {
+  @apply bg-white dark:bg-slate-900 rounded-2xl
+         border border-slate-200/70 dark:border-slate-700/60
+         shadow-soft-lg transition-all duration-300
+         hover:shadow-card-hover hover:-translate-y-1;
+}
+
+/* ─── Badges ────────────────────────────────────────────────────────── */
+.badge-ai {
+  @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold
+         bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300
+         border border-violet-200 dark:border-violet-700/50;
+}
+
+.badge-eyebrow {
+  @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold
+         tracking-wider uppercase;
+}
+
+/* ─── Chat bubbles ──────────────────────────────────────────────────── */
+.chat-bubble-in {
+  @apply bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100
+         rounded-2xl rounded-tl-sm px-4 py-2.5 text-sm shadow-sm max-w-[80%] self-start;
+}
+
+.chat-bubble-out {
+  @apply bg-lan-primary text-slate-50 dark:text-slate-50
+         rounded-2xl rounded-tr-sm px-4 py-2.5 text-sm shadow-sm max-w-[80%] self-end;
+}
+
+/* ─── Stats ─────────────────────────────────────────────────────────── */
+.stat-block {
+  @apply flex flex-col items-center gap-1 text-center;
+}
+
+/* ─── Social cards (fan effect) ─────────────────────────────────────── */
 .social-container {
   position: relative;
   display: flex;
@@ -77,138 +124,86 @@
   fill: #ffffff;
 }
 
-/* Iconos animados para "Nuestro stack" (inspirado en Uiverse example-2) */
+/* ─── Stack icons ───────────────────────────────────────────────────── */
 .stack-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.75rem;
 }
 
 .stack-icon {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 0.5rem;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.stack-icon::after {
-  content: "";
-  display: block;
-  height: 0;
-  transition: height 0.3s ease-in-out;
-  pointer-events: none;
+.dark .stack-icon {
+  background-color: #0f172a;
+  border-color: #1e293b;
 }
 
-.stack-icon:hover::after {
-  height: 10px;
+.stack-icon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
 }
+
+.dark .stack-icon:hover {
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.4);
+}
+
+/* Glow de color por tecnología en hover */
+.stack-icon.stack-react:hover    { border-color: #0ea5e9; box-shadow: 0 6px 20px rgb(14 165 233 / 0.25); }
+.stack-icon.stack-tailwind:hover { border-color: #06b6d4; box-shadow: 0 6px 20px rgb(6 182 212 / 0.25); }
+.stack-icon.stack-vercel:hover   { border-color: #94a3b8; box-shadow: 0 6px 20px rgb(148 163 184 / 0.25); }
+.stack-icon.stack-n8n:hover      { border-color: #f97373; box-shadow: 0 6px 20px rgb(249 115 115 / 0.25); }
+.stack-icon.stack-apis:hover     { border-color: #22c55e; box-shadow: 0 6px 20px rgb(34 197 94 / 0.25); }
+.stack-icon.stack-webhooks:hover { border-color: #6366f1; box-shadow: 0 6px 20px rgb(99 102 241 / 0.25); }
+.stack-icon.stack-sqlite:hover   { border-color: #f59e0b; box-shadow: 0 6px 20px rgb(245 158 11 / 0.25); }
+.stack-icon.stack-github:hover   { border-color: #64748b; box-shadow: 0 6px 20px rgb(100 116 139 / 0.25); }
+.stack-icon.stack-claude:hover   { border-color: #7c3aed; box-shadow: 0 6px 20px rgb(124 58 237 / 0.25); }
+.stack-icon.stack-supabase:hover { border-color: #3ecf8e; box-shadow: 0 6px 20px rgb(62 207 142 / 0.25); }
+.stack-icon.stack-whatsapp:hover { border-color: #25d366; box-shadow: 0 6px 20px rgb(37 211 102 / 0.25); }
 
 .stack-icon-inner {
-  position: relative;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  color: #4b5563;
-  background-color: #ffffff;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 8px 24px rgb(15 23 42 / 0.25);
-}
-
-.dark .stack-icon-inner {
-  background-color: #020617;
-  color: #e5e7eb;
-}
-
-.stack-icon-inner:hover {
-  box-shadow: 3px 2px 45px 0 rgb(0 0 0 / 0.35);
-  color: #f9fafb;
+  width: 36px;
+  height: 36px;
 }
 
 .stack-icon-badge {
-  position: relative;
-  z-index: 1;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  display: block;
+  font-size: 1.375rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
 }
 
-.stack-icon-inner::before {
-  content: "";
-  position: absolute;
-  top: auto;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background: linear-gradient(135deg, #22c55e, #0ea5e9);
-  transition: all 0.3s ease-in-out;
+.stack-icon:hover .stack-icon-badge {
+  transform: scale(1.15);
 }
 
-.stack-icon-inner:hover::before {
-  height: 100%;
+.stack-icon-label {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #64748b;
+  text-align: center;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
 }
 
-/* Colores por tecnología */
-.stack-react.stack-icon-inner::before {
-  background: #0ea5e9;
+.dark .stack-icon-label {
+  color: #94a3b8;
 }
 
-.stack-tailwind.stack-icon-inner::before {
-  background: #06b6d4;
-}
-
-.stack-vercel.stack-icon-inner::before {
-  background: #020617;
-}
-
-.stack-n8n.stack-icon-inner::before {
-  background: #f97373;
-}
-
-.stack-apis.stack-icon-inner::before {
-  background: #22c55e;
-}
-
-.stack-webhooks.stack-icon-inner::before {
-  background: #6366f1;
-}
-
-.stack-sqlite.stack-icon-inner::before {
-  background: #f59e0b;
-}
-
-.stack-github.stack-icon-inner::before {
-  background: #111827;
-}
-
-.stack-icon-inner::after {
-  content: attr(data-label);
-  position: absolute;
-  bottom: -32px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 0.7rem;
-  background-color: #020617;
-  color: #f9fafb;
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.stack-icon-inner:hover::after {
-  opacity: 1;
-  visibility: visible;
-  bottom: -40px;
-}
-
-/* Tarjetas de proceso tipo ventana (inspirado en Uiverse Fcodingx) */
+/* ─── Process cards ─────────────────────────────────────────────────── */
 .process-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -219,6 +214,7 @@
   width: 100%;
   max-width: 220px;
   height: 140px;
+  /* on narrow columns the card fills its cell */
   padding: 0.5rem;
   background: rgba(148, 163, 184, 0.2);
   border-radius: 12px;
@@ -252,17 +248,9 @@
   box-shadow: -5px 5px 5px rgba(15, 23, 42, 0.55);
 }
 
-.process-dot.red {
-  background-color: #ff605c;
-}
-
-.process-dot.yellow {
-  background-color: #ffbd44;
-}
-
-.process-dot.green {
-  background-color: #00ca4e;
-}
+.process-dot.red    { background-color: #ff605c; }
+.process-dot.yellow { background-color: #ffbd44; }
+.process-dot.green  { background-color: #00ca4e; }
 
 .process-card-title {
   text-align: left;
@@ -271,6 +259,7 @@
   font-weight: 600;
   color: #f9fafb;
   text-shadow: -8px 5px 10px rgba(15, 23, 42, 0.7);
+  font-family: 'Syne', system-ui, sans-serif;
 }
 
 .process-card-body {
@@ -280,63 +269,73 @@
   color: #e5e7eb;
 }
 
-/* Animaciones suaves */
+/* ─── Responsive overrides ──────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .process-card {
+    max-width: 100%;
+    transform: skewX(0deg); /* skip skew on phone — too cramped */
+  }
+  .process-card:hover {
+    transform: skewX(0deg);
+  }
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Animations ────────────────────────────────────────────────────── */
 .fade-up {
   animation: fadeUp 0.5s ease-out both;
 }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* New AI/Bot components CSS */
-@layer components {
-  /* AI gradient badge — used across hero, service cards */
-  .badge-ai {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold
-           bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300
-           border border-violet-200 dark:border-violet-700/50;
-  }
-
-  /* Flagship card — elevated border for the WhatsApp bot service */
-  .card-flagship {
-    @apply card border-2 border-lan-secondary dark:border-lan-secondary/60
-           ring-1 ring-lan-secondary/20;
-  }
-
-  /* WhatsApp chat bubble — used in BotDemo component */
-  .chat-bubble-in {
-    @apply bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100
-           rounded-2xl rounded-tl-sm px-4 py-2.5 text-sm shadow-sm max-w-[80%] self-start;
-  }
-
-  .chat-bubble-out {
-    @apply bg-lan-primary text-slate-50 dark:text-slate-50
-           rounded-2xl rounded-tr-sm px-4 py-2.5 text-sm shadow-sm max-w-[80%] self-end;
-  }
-
-  /* Stats counter block */
-  .stat-block {
-    @apply flex flex-col items-center gap-1 text-center;
-  }
+/* ─── Hero-specific ─────────────────────────────────────────────────── */
+.hero-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
 }
 
-/* Tech stack colors for new icons */
-.stack-claude.stack-icon-inner::before {
-  background: #7C3AED;
+/* Testimonial star rating */
+.stars {
+  color: #f59e0b;
+  display: flex;
+  gap: 2px;
 }
 
-.stack-supabase.stack-icon-inner::before {
-  background: #3ECF8E;
+/* Gradient text utility */
+.text-gradient-blue {
+  background: linear-gradient(135deg, #C1E8FF 0%, #5483B3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.stack-whatsapp.stack-icon-inner::before {
-  background: #25D366;
+/* Gradient border card effect */
+.card-gradient-border {
+  position: relative;
+  background: white;
+  border-radius: 1.5rem;
+}
+
+.dark .card-gradient-border {
+  background: rgb(15, 23, 42);
+}
+
+.card-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  padding: 1.5px;
+  background: linear-gradient(135deg, #5483B3, #7C3AED, #C1E8FF);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }

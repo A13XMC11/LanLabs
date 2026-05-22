@@ -90,27 +90,25 @@ export default function About() {
         </p>
         <ul className="stack-icons">
           {[
-            { name: 'React', key: 'react', label: 'React', icon: FaReact, color: 'text-sky-400' },
-            { name: 'Tailwind', key: 'tailwind', label: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-cyan-400' },
-            { name: 'Vercel', key: 'vercel', label: 'Vercel', icon: SiVercel, color: 'text-slate-100' },
-            { name: 'n8n', key: 'n8n', label: 'n8n', icon: SiN8N, color: 'text-rose-400' },
-            { name: 'APIs REST', key: 'apis', label: 'APIs REST', icon: TbApi, color: 'text-emerald-400' },
-            { name: 'Webhooks', key: 'webhooks', label: 'Webhooks', icon: TbWebhook, color: 'text-indigo-400' },
-            { name: 'SQLite / SQL', key: 'sqlite', label: 'SQLite / SQL', icon: SiSqlite, color: 'text-amber-400' },
-            { name: 'GitHub', key: 'github', label: 'GitHub', icon: FaGithub, color: 'text-slate-100' },
-            { name: 'Claude AI', key: 'claude', label: 'Claude AI', icon: RiRobot2Line, color: 'text-violet-400' },
-            { name: 'Supabase', key: 'supabase', label: 'Supabase', icon: SiSupabase, color: 'text-emerald-400' },
-            { name: 'WhatsApp', key: 'whatsapp', label: 'WhatsApp API', icon: FaWhatsapp, color: 'text-green-400' },
+            { name: 'React',       key: 'react',    label: 'React',        icon: FaReact,       color: 'text-sky-400' },
+            { name: 'Tailwind',    key: 'tailwind', label: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-cyan-400' },
+            { name: 'Vercel',      key: 'vercel',   label: 'Vercel',       icon: SiVercel,      color: 'text-slate-600 dark:text-slate-300' },
+            { name: 'n8n',         key: 'n8n',      label: 'n8n',          icon: SiN8N,         color: 'text-rose-400' },
+            { name: 'APIs REST',   key: 'apis',     label: 'APIs REST',    icon: TbApi,         color: 'text-emerald-500' },
+            { name: 'Webhooks',    key: 'webhooks', label: 'Webhooks',     icon: TbWebhook,     color: 'text-indigo-400' },
+            { name: 'SQLite',      key: 'sqlite',   label: 'SQLite / SQL', icon: SiSqlite,      color: 'text-amber-400' },
+            { name: 'GitHub',      key: 'github',   label: 'GitHub',       icon: FaGithub,      color: 'text-slate-600 dark:text-slate-300' },
+            { name: 'Claude AI',   key: 'claude',   label: 'Claude AI',    icon: RiRobot2Line,  color: 'text-violet-500' },
+            { name: 'Supabase',    key: 'supabase', label: 'Supabase',     icon: SiSupabase,    color: 'text-emerald-400' },
+            { name: 'WhatsApp',    key: 'whatsapp', label: 'WhatsApp API', icon: FaWhatsapp,    color: 'text-green-500' },
           ].map((tool) => {
             const Icon = tool.icon;
             return (
-              <li key={tool.name} className="stack-icon flex flex-col items-center">
-                <div className={`stack-icon-inner stack-${tool.key}`} data-label={tool.label}>
-                  <Icon className={`h-6 w-6 stack-icon-badge ${tool.color}`} />
+              <li key={tool.name} className={`stack-icon stack-${tool.key}`}>
+                <div className="stack-icon-inner">
+                  <Icon className={`stack-icon-badge ${tool.color}`} />
                 </div>
-                <span className="mt-1 text-[0.7rem] text-slate-500 dark:text-slate-400">
-                  {tool.label}
-                </span>
+                <span className="stack-icon-label">{tool.label}</span>
               </li>
             );
           })}
