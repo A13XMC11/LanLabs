@@ -9,12 +9,21 @@ export default function ProjectCard({ project }) {
       whileHover={{ y: -4, scale: 1.01 }}
       transition={{ duration: 0.2 }}
     >
-      {project.img && (
+      {project.img ? (
         <img
           src={project.img}
           alt={project.title}
           className="mb-3 w-full h-40 object-cover rounded-lg"
         />
+      ) : (
+        <div className="mb-3 flex h-40 w-full items-end rounded-lg bg-gradient-to-br from-lan-primary via-lan-secondary to-slate-900 p-4 text-white">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] opacity-80">
+              {project.category}
+            </p>
+            <p className="mt-1 text-xl font-bold">{project.title}</p>
+          </div>
+        </div>
       )}
 
       <div className="flex items-center justify-between gap-2">

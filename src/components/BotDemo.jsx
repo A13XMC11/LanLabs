@@ -1,15 +1,15 @@
 // src/components/BotDemo.jsx
 import React, { useRef } from 'react';
-import { motion, useInView, stagger } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import CTAButton from './CTAButton';
 import { FaCircle } from 'react-icons/fa';
 
 const conversation = [
   { from: 'bot', text: '¡Hola! Soy el asistente de LanLabs 🤖 ¿En qué puedo ayudarte hoy?' },
-  { from: 'user', text: 'Hola, quiero saber si pueden hacer un bot para mi restaurante' },
-  { from: 'bot', text: '¡Claro que sí! ¿Cuál es el nombre de tu restaurante y qué necesitas automatizar? (ej: pedidos, reservas, preguntas frecuentes)' },
-  { from: 'user', text: 'Se llama Montreal. Quiero que responda preguntas del menú y tome pedidos' },
-  { from: 'bot', text: 'Perfecto 🍔 Puedo hacer eso y también conectarlo con tu WhatsApp Business. ¿Te gustaría agendar una llamada de 15 minutos para ver los detalles?' },
+  { from: 'user', text: 'Hola, quiero saber si pueden hacer un bot para mi negocio' },
+  { from: 'bot', text: '¡Claro que sí! ¿Qué necesitas automatizar? (ej: preguntas frecuentes, reservas, cotizaciones o seguimiento de leads)' },
+  { from: 'user', text: 'Quiero que responda preguntas y filtre prospectos antes de hablar con ventas' },
+  { from: 'bot', text: 'Perfecto. Puedo conectarlo con WhatsApp Business y enviar los leads calificados a tu equipo. ¿Te gustaría agendar una llamada de 15 minutos?' },
   { from: 'user', text: 'Sí, me interesa' },
   { from: 'bot', text: '¡Genial! Te paso con el equipo ahora mismo 🚀' },
 ];

@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import { projects } from '../data/projects.js';
 import ProjectCard from '../components/ProjectCard.jsx';
 
-const filters = ['Todos', 'Web', 'Automatización', 'Dashboard', 'IA'];
-
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState('Todos');
+  const filters = ['Todos', ...new Set(projects.map((project) => project.category))];
 
   const filteredProjects =
     activeFilter === 'Todos'
