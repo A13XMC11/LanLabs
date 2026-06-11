@@ -1,4 +1,7 @@
+import imgSprint from '../../img/portafolio/sprint.png';
+import imgAquaGroup from '../../img/portafolio/aquagroup.png';
 import imgRecetarioDigital from '../../img/portafolio/recetario-digital.png';
+import imgControlVehicular from '../../img/portafolio/control-vehicular.png';
 
 export const projects = [
   {
@@ -9,7 +12,7 @@ export const projects = [
     stack: ['HTML', 'CSS', 'JavaScript'],
     url: 'https://sprintuio.com/',
     impact: 'Presencia digital más clara para comunicar servicios, proyectos y propuesta de valor.',
-    img: null,
+    img: imgSprint,
   },
   {
     id: 2,
@@ -19,7 +22,7 @@ export const projects = [
     stack: ['Odoo', 'Diseño Web', 'Contenido'],
     url: 'https://aquagroup.odoo.com/',
     impact: 'Proyecto desarrollado como equipo tercerizado por derivación de Sointem.',
-    img: null,
+    img: imgAquaGroup,
   },
   {
     id: 3,
@@ -30,5 +33,15 @@ export const projects = [
     url: 'https://recetas-arbol-vida.vercel.app/',
     impact: 'Recetas centralizadas en una app web fácil de compartir y consultar.',
     img: imgRecetarioDigital,
+  },
+  {
+    id: 4,
+    title: 'Control Vehicular - MotorPlaza',
+    category: 'Dashboard',
+    description: 'Sistema para gestionar vehículos, mantenimientos y evidencias con reportes automáticos.',
+    stack: ['Node.js', 'React', 'SQLite', 'n8n'],
+    url: '#',
+    impact: 'Más control, menos errores y reportes automáticos diarios.',
+    img: imgControlVehicular,
   },
 ];

@@ -26,6 +26,14 @@ export const testimonials = [
   },
   {
     id: 4,
+    name: 'Equipo MotorPlaza',
+    role: 'Gestión Vehicular',
+    service: 'Dashboard + n8n',
+    quote:
+      'Pasamos de Excel caótico a reportes automáticos. Ahora sabemos qué pasa con cada vehículo sin dolor de cabeza.',
+  },
+  {
+    id: 5,
     name: 'Fundación Árbol de Vida',
     role: 'Proyecto social',
     service: 'Web App',
