@@ -2,6 +2,7 @@ import imgSprint from '../../img/portafolio/sprint.png';
 import imgAquaGroup from '../../img/portafolio/aquagroup.png';
 import imgRecetarioDigital from '../../img/portafolio/recetario-digital.png';
 import imgControlVehicular from '../../img/portafolio/control-vehicular.png';
+import imgBodyHealthGym from '../../img/portafolio/bodyhealthgym.png';
 
 export const projects = [
   {
@@ -43,5 +44,15 @@ export const projects = [
     url: '#',
     impact: 'Más control, menos errores y reportes automáticos diarios.',
     img: imgControlVehicular,
+  },
+  {
+    id: 5,
+    title: 'Body Health Gym',
+    category: 'Dashboard',
+    description: 'Panel administrativo con página web para gestionar inscripciones, miembros y mensualidades de un gimnasio.',
+    stack: ['React', 'Vercel', 'Dashboard Admin'],
+    url: 'https://bodyhealthgym.vercel.app/',
+    impact: 'Control centralizado de socios, pagos e información operativa del gimnasio.',
+    img: imgBodyHealthGym,
   },
 ];
