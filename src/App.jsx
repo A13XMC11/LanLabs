@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useTheme } from './hooks/useTheme.js';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
-import ContactFloat from './components/ContactFloat.jsx';
 
 import Home from './pages/Home.jsx';
 const About     = lazy(() => import('./pages/About.jsx'));
@@ -55,7 +54,6 @@ export default function App() {
         </PageWrapper>
       </Suspense>
       <Footer />
-      <ContactFloat />
     </div>
   );
 }
