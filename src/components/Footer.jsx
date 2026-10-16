@@ -1,56 +1,29 @@
-// src/components/Footer.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
-import logoClaro from '../../img/Logo_LanLabs_Claro.PNG';
-import logoOscuro from '../../img/Logo_LanLabs_Oscuro.png';
+import { getWhatsAppLink } from '../lib/contact.js';
+import TLink from './TLink.jsx';
+import symbol from '../../img/brand/symbol.png';
+
+const links = [['Servicios', '/servicios'], ['Proyectos', '/portafolio'], ['Estudio', '/sobre'], ['Planes', '/planes'], ['Contacto', '/contacto']];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-800 mt-16">
-      <div className="mx-auto max-w-6xl px-4 py-10 grid gap-8 md:grid-cols-4 text-sm">
-        <div className="space-y-2">
-          <div className="flex items-center gap-2">
-            <img
-              src={logoClaro}
-              alt="LanLabs"
-              className="h-16 w-auto"
-            />
-            
-          </div>
-          <p className="text-slate-500 dark:text-slate-400">
-            Automatización con IA, bots de WhatsApp y desarrollo web para que tu negocio crezca en piloto automático.
-          </p>
+    <footer className="footer">
+      <div className="wrap footer__top">
+        <div className="footer__lead">
+          <img src={symbol} alt="" aria-hidden="true" />
+          <p>Ideas claras. Sistemas que funcionan.<br />Hecho en Ecuador para negocios que avanzan.</p>
         </div>
-
-        <div>
-          <h4 className="font-semibold mb-3">Navegación</h4>
-          <ul className="space-y-1 text-slate-500 dark:text-slate-400">
-            <li><Link to="/">Inicio</Link></li>
-            <li><Link to="/sobre">Sobre Nosotros</Link></li>
-            <li><Link to="/servicios">Servicios</Link></li>
-            <li><Link to="/portafolio">Portafolio</Link></li>
-            <li><Link to="/contacto">Contacto</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-semibold mb-3">Redes</h4>
-          <ul className="space-y-1 text-slate-500 dark:text-slate-400">
-            <li><a href="https://instagram.com/s2.h0_?igsh=MW42NDd1NzJ2a3FpZA%3D%3D&utm_source=qr" target="_blank" rel="noreferrer">Instagram</a></li>
-            <li><a href="https://wa.me/593992672980" target="_blank" rel="noreferrer">WhatsApp</a></li>
-            <li><a href="https://t.me/alexander_mc11" target="_blank" rel="noreferrer">Telegram</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 className="font-semibold mb-3">Legal</h4>
-          <p className="text-slate-500 dark:text-slate-400 text-xs">
-            © {new Date().getFullYear()} LanLabs. Todos los derechos reservados.
-            <br />
-            Sitio en construcción constante (como todo buen laboratorio).
-          </p>
+        <nav className="footer__links" aria-label="Pie de página">
+          {links.map(([label, to]) => <TLink key={to} to={to}>{label}</TLink>)}
+        </nav>
+        <div className="footer__contact">
+          <span>¿Conversamos?</span>
+          <a href={getWhatsAppLink()} target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp ↗</a>
+          <a href="https://instagram.com/s2.h0_" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a href="https://t.me/alexander_mc11" target="_blank" rel="noopener noreferrer">Telegram ↗</a>
         </div>
       </div>
+      <div className="footer__giant" aria-hidden="true"><span>LanLabs</span></div>
+      <div className="wrap footer__bottom"><span>© {new Date().getFullYear()} LanLabs</span><span>Diseño, automatización e inteligencia aplicada.</span></div>
     </footer>
   );
 }

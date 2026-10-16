@@ -9,8 +9,7 @@ export default defineConfig({
         manualChunks: {
           'vendor':  ['react', 'react-dom'],
           'router':  ['react-router-dom'],
-          'motion':  ['framer-motion'],
-          'icons':   ['react-icons'],
+          'motion':  ['gsap', 'lenis'],
         },
       },
     },

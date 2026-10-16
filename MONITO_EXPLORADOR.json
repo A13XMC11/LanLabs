@@ -1,0 +1,154 @@
+{
+  "tipo_de_prompt": "Personaje maestro reutilizable",
+  "nombre_personaje": "Monito Explorador",
+  "objetivo": "Generar ilustraciones del mismo personaje en cualquier pose, expresión, actividad o escenario, conservando su identidad visual y proporciones originales.",
+  "instruccion_principal": "Representa siempre al mismo mono antropomórfico chibi de la referencia. Su diseño es fijo e invariable. Solo pueden cambiar la pose, la expresión, la orientación, los objetos que manipula y el entorno. No rediseñes al personaje.",
+  "identidad": {
+    "especie": "Mono antropomórfico caricaturesco",
+    "estilo": "Mascota chibi de videojuego o aplicación",
+    "personalidad_visual": ["Amigable", "Inteligente", "Curioso", "Aventurero", "Tierno", "Juvenil"],
+    "apariencia_general": "Pequeño mono azul de cabeza muy grande y redonda, cuerpo compacto, gafas circulares azul oscuro, mochila café de explorador, patitas cortas y cola azul curvada.",
+    "edad_visual": "Personaje juvenil y adorable, sin edad humana definida"
+  },
+  "anatomia": {
+    "proporciones": {
+      "tipo": "Chibi",
+      "cabeza": "Muy grande y dominante respecto al cuerpo",
+      "torso": "Pequeño, ancho, redondeado y compacto",
+      "cuello": "Muy corto y prácticamente invisible",
+      "brazos": "Cortos, suaves y redondeados",
+      "piernas": "Muy cortas, pequeñas y ligeramente separadas",
+      "manos": "Pequeñas, redondas, con dedos simplificados",
+      "pies": "Cortos, anchos y redondeados, con pequeñas divisiones que sugieren dedos",
+      "silueta": "Compacta, adorable, equilibrada y reconocible"
+    },
+    "cabeza": {
+      "forma": "Esférica, grande y perfectamente redondeada",
+      "color_base": "#0E1F4D",
+      "contorno": "Azul marino casi negro, grueso y uniforme",
+      "zona_superior": "Amplio reflejo brillante en degradado azul eléctrico, celeste y violeta suave",
+      "acabado": "Liso, pulido y brillante",
+      "pelo": "Sin mechones, copetes ni cabello sobresaliente",
+      "estructura": "Frente redondeada y máscara facial celeste con pequeña separación curva central en la parte superior"
+    },
+    "rostro": {
+      "forma": "Máscara facial amplia, redondeada y celeste",
+      "color": "#B8F1F4",
+      "ojos": {
+        "cantidad": 2,
+        "forma": "Óvalos verticales negros con extremos redondeados",
+        "color": "#10172F",
+        "estilo": "Minimalista, sin iris ni pupilas adicionales",
+        "separacion": "Simétrica y equilibrada"
+      },
+      "nariz": "Sin nariz visible",
+      "boca": {
+        "forma": "Pequeña línea curva sonriente",
+        "color": "#10172F",
+        "grosor": "Redondeado y uniforme",
+        "expresion_base": "Sonrisa suave, tranquila y amigable"
+      },
+      "orejas": {
+        "forma": "Grandes, circulares y sobresalientes a ambos lados de la cabeza",
+        "interior": "Celeste con degradados azulados y violetas",
+        "contorno": "Azul marino oscuro y grueso"
+      }
+    },
+    "cuerpo": {
+      "forma": "Torso corto y ligeramente redondeado",
+      "color_principal": "#164A9A",
+      "vientre": "Zona ovalada celeste con degradado suave",
+      "hombros": "Pequeños y redondeados",
+      "brazos": "Azules con degradados suaves",
+      "manos": "Celeste claro, ligeramente más claro que los brazos",
+      "piernas": "Azules, muy cortas y proporcionadas",
+      "pies": "Celeste claro con contorno azul oscuro"
+    },
+    "cola": {
+      "obligatoria": true,
+      "tipo": "Cola de mono pequeña y curvada",
+      "forma": "Nace de la parte posterior inferior del torso, se proyecta hacia un costado y termina en una curva suave hacia arriba",
+      "grosor": "Moderado, acorde al tamaño corporal",
+      "color": "Azul con degradados celestes",
+      "contorno": "Azul marino grueso",
+      "restriccion": "No exagerar su longitud ni su grosor. Debe verse bonita, discreta y natural."
+    }
+  },
+  "accesorios_permanentes": {
+    "gafas": {
+      "obligatorias": true,
+      "tipo": "Gafas ópticas redondas",
+      "forma": "Dos círculos grandes y simétricos",
+      "montura": "Azul marino oscuro",
+      "color_montura": "#101B43",
+      "puente": "Pequeño puente curvo entre los lentes",
+      "patillas": "Delgadas, azules, extendidas hacia las orejas",
+      "cristales": "Transparentes, sin tintes oscuros",
+      "posicion": "Centradas sobre los ojos",
+      "proporcion": "Grandes pero ajustadas al rostro",
+      "restricciones": ["No convertirlas en gafas de sol", "No cambiar la forma circular", "No ocultar los ojos", "No eliminar las gafas"]
+    },
+    "mochila": {
+      "obligatoria": true,
+      "tipo": "Mochila clásica de explorador y aventurero",
+      "color_principal": "#B86B32",
+      "colores_secundarios": ["#D88A43", "#8A461F", "#E7A35A"],
+      "material_visual": "Cuero o lona estilizada mediante degradados suaves",
+      "forma": "Compacta, ligeramente rectangular con esquinas redondeadas",
+      "volumen": "Abultada hacia atrás, como si contuviera artículos de aventura",
+      "ubicacion": "En la espalda, detrás del torso y por debajo de la nuca",
+      "altura": "Nunca debe alcanzar ni interferir con la cabeza",
+      "anchura": "Más profunda hacia atrás que hacia los costados",
+      "elementos": ["Compartimento principal voluminoso", "Solapa superior redondeada", "Hebilla rectangular central", "Bolsillos laterales pequeños", "Costuras y detalles simplificados", "Dos correas sobre los hombros"],
+      "correas": {
+        "color": "Café anaranjado",
+        "posicion": "Sobre ambos hombros y visibles en la parte frontal",
+        "grosor": "Proporcional al torso"
+      },
+      "restricciones": ["No hacerla más grande que el torso", "No colocarla detrás de la cabeza", "No elevarla por encima de la nuca", "No hacerla completamente plana", "No ocultar la cola", "No cambiarla por una mochila moderna o escolar"]
+    }
+  },
+  "paleta_cromatica": {
+    "azul_marino_contornos": "#10172F",
+    "azul_marino_cabeza": "#0E1F4D",
+    "azul_cuerpo": "#164A9A",
+    "azul_electrico": "#269DFA",
+    "celeste_rostro": "#B8F1F4",
+    "celeste_manos_pies": "#A5EAF5",
+    "violeta_reflejos": "#756AF0",
+    "cafe_mochila": "#B86B32",
+    "caramelo_detalles": "#D88A43",
+    "oscuro_ojos": "#10172F",
+    "nota": "Los colores son referencias aproximadas. Prioriza los tonos visuales de la imagen original sobre los códigos hexadecimales."
+  },
+  "estilo_artistico": {
+    "tecnica": "Ilustración digital vectorial estilo mascota chibi",
+    "apariencia": "Diseño 2D moderno con volumen visual ligero",
+    "contornos": "Muy gruesos, continuos, redondeados y azul marino oscuro",
+    "sombreado": "Degradados suaves con luces y sombras simplificadas",
+    "iluminacion_base": "Suave y uniforme",
+    "textura": "Superficies limpias y lisas",
+    "acabado": "Pulido, brillante, adorable y profesional",
+    "nivel_detalle": "Moderado, evitando complejidad innecesaria",
+    "consistencia": "Mantener siempre el mismo lenguaje visual en todo el personaje",
+    "evitar": ["Fotorrealismo", "Pelaje realista", "Anime detallado", "Modelado 3D realista", "Trazos de boceto", "Sombras duras", "Texturas granuladas", "Anatomía humana realista"]
+  },
+  "reglas_de_consistencia": {
+    "prioridad": "Máxima",
+    "elementos_invariables": ["Forma y tamaño relativo de la cabeza", "Máscara facial celeste", "Dos ojos negros ovalados", "Gafas circulares azul oscuro", "Orejas grandes y redondas", "Cuerpo pequeño y compacto", "Piernas muy cortas", "Manos y pies celestes", "Cola azul curvada", "Mochila café de aventurero", "Posición baja de la mochila", "Degradado azul y violeta de la cabeza", "Contornos gruesos azul marino"],
+    "elementos_modificables": ["Posición corporal", "Movimiento de brazos y piernas", "Orientación del personaje", "Expresión facial", "Dirección de la mirada", "Actividad realizada", "Objetos que sostiene", "Escenario", "Composición", "Encuadre", "Iluminación ambiental"],
+    "normas": ["El personaje debe parecer exactamente el mismo en todas las imágenes.", "No introducir accesorios permanentes adicionales.", "No modificar su anatomía para adaptarla al escenario.", "Las expresiones deben respetar la estructura original del rostro.", "La mochila debe conservar sus características desde cualquier ángulo.", "Las gafas deben adaptarse correctamente a la perspectiva.", "Las piernas siempre deben ser cortas.", "La cola debe conservar su tamaño y curvatura característica.", "No convertir al personaje en un mono realista.", "La identidad visual tiene prioridad sobre la creatividad de la escena."]
+  },
+  "generacion_de_escenas": {
+    "escena": "[DESCRIBIR ESCENA]",
+    "accion": "[DESCRIBIR ACTIVIDAD]",
+    "pose": "[DESCRIBIR POSE]",
+    "expresion": "[DESCRIBIR EXPRESION]",
+    "orientacion": "[ANGULO DE CAMARA]",
+    "objetos_adicionales": "[OBJETOS OPCIONALES]",
+    "fondo": "[DESCRIBIR FONDO]",
+    "iluminacion": "[TIPO DE ILUMINACION]",
+    "formato": "[RELACION DE ASPECTO]"
+  },
+  "prompt_final": "Genera una ilustración del Monito Explorador respetando estrictamente todas las características definidas en este JSON. El personaje está en [ESCENA], realizando [ACCION], con una pose [POSE] y expresión [EXPRESION]. La cámara utiliza [ANGULO DE CAMARA]. Puede interactuar con [OBJETOS OPCIONALES]. El fondo debe ser [FONDO], con iluminación [TIPO DE ILUMINACION]. Conserva exactamente su cabeza grande y redonda, máscara facial celeste, ojos negros ovalados, gafas circulares azul oscuro, cuerpo azul compacto, piernas muy cortas, cola pequeña curvada y mochila café de aventurero colocada debajo de la nuca y con volumen hacia atrás. Mantén los contornos gruesos azul marino, los degradados suaves y el estilo vectorial chibi original. No rediseñes al personaje."
+}

@@ -1,0 +1,66 @@
+/* Pinned frame-scrub scenes */
+.scene { position: relative; height: var(--scene-h, 100svh); background: var(--night); }
+.scene__stage { position: sticky; top: 0; height: 100svh; overflow: hidden; isolation: isolate; }
+.scene__media { position: absolute; inset: 0; z-index: 1; will-change: transform; }
+.frame-canvas { max-width: none; position: absolute; left: 50%; top: 50%; width: max(100vw, 177.78svh); aspect-ratio: 16 / 9; height: auto; transform: translate(-50%, -50%); }
+.scene__media--soft { -webkit-mask-image: radial-gradient(ellipse 80% 80% at 60% 50%, #000 55%, transparent 100%); mask-image: radial-gradient(ellipse 80% 80% at 60% 50%, #000 55%, transparent 100%); }
+@media (prefers-reduced-motion: reduce) { .scene { height: 100svh; } }
+
+/* HERO */
+.hero__grid { position: absolute; inset: 0; z-index: 0; opacity: 0.5; background-image: linear-gradient(rgba(127, 196, 255, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(127, 196, 255, 0.06) 1px, transparent 1px); background-size: 72px 72px; -webkit-mask-image: radial-gradient(70% 70% at 30% 50%, #000, transparent); mask-image: radial-gradient(70% 70% at 30% 50%, #000, transparent); }
+.hero__giant { position: absolute; z-index: 0; left: 0; bottom: 4%; white-space: nowrap; font-size: clamp(9rem, 26vw, 26rem); font-weight: 800; letter-spacing: -0.06em; line-height: 0.8; color: transparent; -webkit-text-stroke: 1.5px rgba(127, 196, 255, 0.2); will-change: transform; }
+.hero__copy { position: relative; z-index: 3; height: 100%; display: grid; align-content: center; pointer-events: none; }
+.hero__copy a { pointer-events: auto; }
+.hero__intro, .chap { grid-area: 1 / 1; max-width: min(40rem, 56vw); }
+.hero__intro h1 { margin-bottom: 1.8rem; }
+.hero__lead { font-size: clamp(1.02rem, 1.3vw, 1.2rem); color: var(--muted); max-width: 34rem; margin-bottom: 2.2rem; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
+.chap { opacity: 0; }
+.chap__kicker { display: inline-block; margin-bottom: 1.2rem; padding: 0.4rem 0.9rem; border: 1px solid var(--line); border-radius: 999px; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sky); background: rgba(3, 22, 43, 0.5); backdrop-filter: blur(8px); }
+.chap h2 { font-size: clamp(2.2rem, 4.8vw, 4.4rem); margin-bottom: 1.2rem; }
+.chap p { font-size: clamp(1rem, 1.25vw, 1.15rem); color: var(--muted); max-width: 30rem; }
+.hero__hud { position: absolute; z-index: 4; left: var(--gutter); right: var(--gutter); bottom: 1.8rem; display: flex; align-items: center; gap: 1.5rem; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.hero__cue { display: inline-flex; align-items: center; gap: 0.9rem; }
+.hero__cue i { width: 1px; height: 2.4rem; background: linear-gradient(var(--sky), transparent); animation: cue 2s var(--ease) infinite; transform-origin: top; }
+@keyframes cue { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+.hero__steps { display: flex; gap: 0.4rem; margin-left: auto; }
+.hero__steps i { width: 2.6rem; height: 3px; border-radius: 3px; background: var(--sky); opacity: 0.3; transform: scaleX(0.4); transform-origin: left; }
+.hero__bar { position: absolute; left: 0; right: 0; bottom: -1.8rem; height: 3px; background: var(--line); }
+.hero__bar b { display: block; height: 100%; background: linear-gradient(90deg, var(--royal), var(--sky)); transform-origin: left; transform: scaleX(0); }
+
+/* CHAT scene */
+.chat__frame { position: absolute; z-index: 2; left: 50%; top: 50%; width: max(100vw, 177.78svh); aspect-ratio: 16 / 9; transform: translate(-50%, -50%); container-type: size; pointer-events: none; }
+.chat__msg { position: absolute; display: grid; place-items: center; text-align: center; font-weight: 600; line-height: 1.2; color: var(--navy); font-size: 0.88cqw; padding: 0.4cqw; opacity: 0; }
+.chat__msg--1 { left: 81.5%; top: 11%; width: 12%; height: 11%; }
+.chat__msg--2 { left: 79.5%; top: 37%; width: 12.5%; height: 11%; }
+.chat__msg--3 { left: 74%; top: 70.5%; width: 15.5%; height: 11%; font-size: 1cqw; color: var(--royal); }
+.chat__copy { position: relative; z-index: 3; height: 100%; display: grid; align-content: center; justify-items: start; pointer-events: none; }
+.chat__copy a { pointer-events: auto; }
+.chat__title { font-size: clamp(2.4rem, 5vw, 4.8rem); margin-bottom: 2.4rem; max-width: 12ch; }
+.chat__steps { display: grid; gap: 1.5rem; max-width: 26rem; }
+.chat__step { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; opacity: 0.18; }
+.chat__step > span { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 50%; border: 1px solid var(--sky); color: var(--sky); font-weight: 600; font-size: 0.85rem; background: rgba(3, 22, 43, 0.6); }
+.chat__step h3 { font-size: 1.25rem; margin-bottom: 0.2rem; }
+.chat__step p { font-size: 0.95rem; color: var(--muted); line-height: 1.5; }
+.chat__cta { margin-top: 2.2rem; opacity: 0; }
+
+@media (max-width: 900px) {
+  .frame-canvas:not(.frame-canvas--fill) { -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 98%); mask-image: linear-gradient(to bottom, #000 72%, transparent 98%); }
+  .frame-canvas, .chat__frame { left: 50%; transform: translate(-54%, -50%); width: max(150vw, 105svh); top: 31%; }
+  .scene__media--soft { -webkit-mask-image: none; mask-image: none; }
+  .hero__copy, .chat__copy { align-content: end; padding-bottom: 5.5rem; }
+  .hero__intro, .chap { max-width: 100%; }
+  .hero__copy .hero__intro::before, .chat__copy::before { content: ''; position: absolute; inset: 20% calc(var(--gutter) * -1) -6rem; z-index: -1; background: linear-gradient(transparent, var(--night) 45%); }
+  .hero__giant { display: none; }
+  .hero__lead { margin-bottom: 1.4rem; font-size: 0.98rem; }
+  .hero__intro h1 { font-size: clamp(2.6rem, 12vw, 3.4rem); margin-bottom: 1rem; }
+  .hero__hud { font-size: 0.66rem; }
+  .hero__steps { display: none; }
+  .chat__steps { gap: 0.9rem; }
+  .chat__step { grid-template-columns: 2.4rem 1fr; }
+  .chat__step > span { width: 2.4rem; height: 2.4rem; }
+  .chat__title { margin-bottom: 1.2rem; font-size: 2.3rem; }
+  .chat__step p { display: none; }
+}
+
+.frame-canvas.frame-canvas--fill { left: 0; top: 0; width: 100%; height: 100%; aspect-ratio: auto; transform: none; }

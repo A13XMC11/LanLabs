@@ -1,144 +1,92 @@
-// src/pages/Services.jsx
-import React from 'react';
-import { motion } from 'framer-motion';
-import CTAButton from '../components/CTAButton.jsx';
-import ServiceCard from '../components/ServiceCard.jsx';
-import { services } from '../data/services.js';
+import { useLayoutEffect, useRef } from 'react';
+import Page from '../components/Page.jsx';
+import PageHero from '../components/PageHero.jsx';
+import FrameCanvas from '../components/FrameCanvas.jsx';
+import Marquee from '../components/Marquee.jsx';
+import FinalCTA from '../sections/FinalCTA.jsx';
+import { gsap, ScrollTrigger } from '../lib/gsap.js';
+import { getWhatsAppLink } from '../lib/contact.js';
+import { projects } from '../data/projects.js';
+
+const offers = [
+  { id: 'asistentes', index: '01', tag: 'IA / Conversaciones', title: 'Cada conversación puede avanzar.', body: 'Creamos asistentes para WhatsApp y web que responden con el contexto de tu negocio, hacen las preguntas correctas y entregan la información a tu equipo.', points: ['Respuestas basadas en tu información', 'Captura y organización de contactos', 'Derivación a personas cuando hace falta'], layer: 'chat' },
+  { id: 'automatizacion', index: '02', tag: 'Flujos / Integraciones', title: 'El trabajo entre herramientas, resuelto.', body: 'Conectamos aplicaciones y datos para que la información llegue al lugar correcto sin copiar, pegar ni perseguir archivos.', points: ['Reportes y alertas automáticas', 'Conexión de CRM, hojas y APIs', 'Flujos diseñados para tu operación'], layer: 'globe' },
+  { id: 'web', index: '03', tag: 'Web / Producto', title: 'Una presencia que hace algo más.', body: 'Diseñamos sitios y aplicaciones donde la identidad, el contenido y la tecnología trabajan juntos para explicar, captar o gestionar.', points: ['Sitios corporativos y landing pages', 'Aplicaciones y paneles a medida', 'Diseño adaptable y accesible'], layer: 'web' },
+];
+
+const shot = projects[0];
 
 export default function Services() {
+  const rootRef = useRef(null);
+  const chatApi = useRef(null);
+  const globeApi = useRef(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const mm = gsap.matchMedia();
+      mm.add('(min-width: 900px) and (prefers-reduced-motion: no-preference)', () => {
+        const layers = gsap.utils.toArray('.svc__layer');
+        const show = (i) => layers.forEach((el, k) => gsap.to(el, { opacity: k === i ? 1 : 0, scale: k === i ? 1 : 0.94, duration: 0.7, ease: 'power3.out', overwrite: true }));
+        gsap.set(layers, { opacity: (i) => (i === 0 ? 1 : 0) });
+        gsap.utils.toArray('.offer').forEach((el, i) => {
+          ScrollTrigger.create({
+            trigger: el, start: 'top 28%', end: 'bottom 28%',
+            onToggle: (self) => { if (self.isActive) show(i); },
+          });
+          ScrollTrigger.create({
+            trigger: el, start: 'top bottom', end: 'bottom top', scrub: true,
+            onUpdate: (self) => {
+              const api = { chat: chatApi, globe: globeApi }[offers[i].layer];
+              api?.current?.render(self.progress);
+              if (offers[i].layer === 'web') {
+                const strip = rootRef.current.querySelector('.svc__scroll');
+                const distance = Math.max(0, strip.scrollHeight - strip.parentElement.clientHeight);
+                gsap.set(strip, { y: -self.progress * distance });
+              }
+            },
+          });
+        });
+      });
+    }, rootRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <main className="pt-24 mx-auto max-w-6xl px-4 pb-16 space-y-14">
-      {/* Intro Section */}
-      <section className="space-y-4 max-w-3xl">
-        <span className="text-xs font-bold tracking-[0.2em] uppercase text-lan-secondary">
-          Automatización · IA · Web
-        </span>
-        <h1 className="font-display text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 leading-tight">
-          Soluciones que generan<br />resultados reales para tu negocio
-        </h1>
-        <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
-          Elige el servicio que necesitas o combínalos. Adaptable a cualquier presupuesto,
-          enfocado en que ganes más y trabajes menos — sin complicaciones técnicas.
-        </p>
-      </section>
-
-      {/* Para quién es LanLabs - Personas */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-bold">¿Para quién es LanLabs?</h2>
-        <div className="grid gap-5 md:grid-cols-3">
-          {[
-            { title: 'Emprendedores', desc: 'Quieres más clientes sin trabajar más horas' },
-            { title: 'Negocios locales', desc: 'Tienes procesos manuales que roban tu tiempo' },
-            { title: 'Freelancers/Agencias', desc: 'Quieres ofrecer más sin contratar más' },
-          ].map((persona, idx) => (
-            <motion.div
-              key={idx}
-              className="card p-6 space-y-2"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1, duration: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-lg font-semibold text-lan-primary dark:text-lan-accent">
-                {persona.title}
-              </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300">
-                {persona.desc}
-              </p>
-            </motion.div>
-          ))}
+    <Page>
+      <PageHero number="01 / 05" eyebrow="Servicios" video="chat" title={<>Tecnología hecha para <em>trabajar contigo.</em></>} lead="Cada solución comienza con una pregunta concreta: ¿qué puede funcionar mejor en tu negocio?" />
+      <section className="band band--night svc" ref={rootRef}>
+        <div className="wrap svc__grid">
+          <div className="svc__visual" aria-hidden="true">
+            <div className="svc__card">
+              <div className="svc__layer"><FrameCanvas dir="chat" cover focus={0.72} apiRef={chatApi} initial={0.3} /></div>
+              <div className="svc__layer"><FrameCanvas dir="globe" cover focus={0.7} apiRef={globeApi} initial={0.3} /></div>
+              <div className="svc__layer svc__shot">
+                <div className="vis__bar"><i /><i /><i /><span>{shot.url.replace(/^https?:\/\//, '')}</span></div>
+                <div className="svc__shotview"><div className="svc__scroll">{projects.slice(0, 3).map((p) => <img key={p.id} src={p.img} alt="" />)}</div></div>
+              </div>
+              <span className="svc__badge">LANLABS / EN ACCIÓN</span>
+            </div>
+          </div>
+          <div className="svc__list">
+            {offers.map((o) => (
+              <article className="offer" id={o.id} key={o.id}>
+                <div className="offer__inline" aria-hidden="true">
+                  {o.layer === 'web' ? <img src={shot.img} alt="" loading="lazy" /> : <video src={`/media/${o.layer}.mp4`} autoPlay muted loop playsInline preload="metadata" />}
+                </div>
+                <span className="eyebrow"><i /> {o.index} / {o.tag}</span>
+                <h2 data-words>{o.title}</h2>
+                <p data-reveal>{o.body}</p>
+                <ul data-stagger>{o.points.map((p) => <li key={p}>{p}</li>)}</ul>
+                <a className="textlink" href={getWhatsAppLink(`Hola LanLabs. Me interesa: ${o.title}`)} target="_blank" rel="noopener noreferrer">Hablemos de esta solución <span aria-hidden="true">↗</span></a>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
-
-      {/* Services Grid */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-bold">Nuestros servicios</h2>
-
-        {/* Flagship Bot Service - Full Width */}
-        <div>
-          <ServiceCard
-            key={services[0].id}
-            title={services[0].title}
-            description={services[0].description}
-            flagship={services[0].flagship}
-            features={services[0].features}
-            ctaMessage={services[0].ctaMessage}
-            metric={services[0].metric}
-            iconType={services[0].iconType}
-          />
-        </div>
-
-        {/* Remaining 5 Services - 2 Column Grid */}
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {services.slice(1).map((service) => (
-            <ServiceCard
-              key={service.id}
-              title={service.title}
-              description={service.description}
-              flagship={service.flagship}
-              features={service.features}
-              ctaMessage={service.ctaMessage}
-              metric={service.metric}
-              iconType={service.iconType}
-            />
-          ))}
-        </div>
+      <section className="band band--night marquee-band">
+        <Marquee rows={[['Asistentes', 'Flujos', 'Integraciones', 'Web'], ['WhatsApp', 'n8n', 'Supabase', 'React']]} />
       </section>
-
-      {/* Process Section */}
-      <section className="card p-8 space-y-6">
-        <h2 className="text-2xl font-bold">Nuestro proceso</h2>
-        <div className="process-grid text-sm">
-          <article className="process-card">
-            <div className="process-align">
-              <span className="process-dot red" />
-              <span className="process-dot yellow" />
-              <span className="process-dot green" />
-            </div>
-            <h3 className="process-card-title">1. Reunión de descubrimiento</h3>
-            <p className="process-card-body">
-              Hablamos de tu negocio, tus problemas y tus objetivos para entender bien el contexto.
-            </p>
-          </article>
-
-          <article className="process-card">
-            <div className="process-align">
-              <span className="process-dot red" />
-              <span className="process-dot yellow" />
-              <span className="process-dot green" />
-            </div>
-            <h3 className="process-card-title">2. Propuesta y roadmap</h3>
-            <p className="process-card-body">
-              Definimos alcance, prioridades, tiempos y costos de forma clara y sin sorpresas.
-            </p>
-          </article>
-
-          <article className="process-card">
-            <div className="process-align">
-              <span className="process-dot red" />
-              <span className="process-dot yellow" />
-              <span className="process-dot green" />
-            </div>
-            <h3 className="process-card-title">3. Diseño y desarrollo</h3>
-            <p className="process-card-body">
-              Creamos la web y los flujos en iteraciones pequeñas, probables y fáciles de revisar.
-            </p>
-          </article>
-
-          <article className="process-card">
-            <div className="process-align">
-              <span className="process-dot red" />
-              <span className="process-dot yellow" />
-              <span className="process-dot green" />
-            </div>
-            <h3 className="process-card-title">4. Lanza, mide y escala</h3>
-            <p className="process-card-body">
-              Entregamos, medimos resultados y hacemos ajustes para que el sistema mejore solo.
-            </p>
-          </article>
-        </div>
-        <CTAButton className="mt-2" />
-      </section>
-    </main>
+      <FinalCTA title={<>Tu negocio tiene su propia forma de trabajar. <em>La solución también.</em></>} body="Podemos combinar asistentes, flujos y web según lo que necesites resolver primero." />
+    </Page>
   );
 }
